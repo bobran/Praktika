@@ -1,0 +1,185 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+
+\begin{document}
+\newcommand{\st}{^{\circ}}
+
+\section{Úkol}
+
+\begin{enumerate}
+\item Změřte absorpční spektrum roztoků kalmagitu s koncentracemi $c_0, c_{0/2}, c_{0/4}$ při pH = 10 v celém oboru viditelného světla. Zpracujte graficky. Pro tři vybrané vlnové délky zkontrolujte platnost Beerova zákona. Zpracujte graficky.
+\item Měření z bodu 1. pro koncentraci $c_{0/2}$ doplňte proměřením dvou roztoků kalmagitu téže koncentrace, které navíc obsahují $5\cdot 10^{-5}$ mol/l a $25\cdot 10^{-5}$ mol/l síranu hořečnatého MgSO4. Získaná tři spektra zpracujte graficky, určete isobestické body.
+\item Proveďte odhad chyby transmitance a určete chybu nepřímého měření absorpčního koeficientu.
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Transmitance}
+Transmitance je definována vztahem
+\begin{eqnarray}
+\theta = \Phi_t/\Phi_0,
+\end{eqnarray}
+kde $\Phi_t$ resp. $\Phi_0$ je prošlý resp. na látku dopadající světelný tok. Pokud vypustíme ztráry na odrazech získáme $\theta_i$, což značí vnitřní transmitanci. 
+Její doplněk do jedničky se nazývá absorptance.
+
+\subsection{Lambertův zákon}
+Lambertův uákon říká, že vnitřní transmitance v látce se chová dle rovnice
+\begin{eqnarray}
+\theta_i=10^{\kappa l}=\mbox{e}^{\kappa_nl},
+\end{eqnarray}
+kde $\kappa$ a $\kappa_n$ jsou absorbční koeficienty.
+
+\subsection{Absorbance}
+Absorbance je definována vztahem
+\begin{eqnarray}
+A=\kappa l
+\end{eqnarray}
+
+\subsection{Lambert-Beerův zákon}
+Lambert-Beerův zákon říká, že
+\begin{eqnarray}
+\theta_i=10^{\varepsilon cl},
+\end{eqnarray}
+kde $\varepsilon$ je molární absorbční koeficint a $c$ molární koncentrace roztoku.
+
+Pro více neovlivňujících se látek platí navíc vztah pro absorbanci
+\begin{eqnarray}
+A=l\sum\varepsilon_ic_i.
+\end{eqnarray}
+
+\section{Měření}
+Nejprve jsem si připravil roztoky, které se budou měřit. Jejich složení je shrnuto v tabulce \ref{TR}. Roztoky jsem přelil do připravených kyvet, jejiž tloušťka byla 
+$l=(1.000 \pm 0.001)$ cm.
+
+\begin{table}
+$$
+\begin{array}{|l|c|c|c|c|c|}
+\hline
+&   c_0&    c_0/2&    c_0/4&    c_0/2\cdot c_{MgSO4}& c_0/2\cdot 5c_{MgSO4} \\ \hline
+\mbox{kalagnit}&    5&  2.5&  1.25& 2.5&    2.5 \\ \hline
+\mbox{MgSO4}&   0&  0&  0&  1&  5 \\ \hline
+\mbox{pufr}&    1&  1&  1&  1&  1 \\ \hline
+\mbox{H2O}& 4&  6.5&    7.75&   5.5&    1.5 \\ \hline
+\end{array}
+$$
+\caption{Solžení měřených rozoků}
+\label{TR}
+\end{table}
+
+Následně jsem seřídíl spektrofotometr a v závislosti na vlnové délce použitého světla jsem proměřil vnitřní transmitanci. Výsledky jsou v tabulce \ref{TM}. Výsledné závislosti 
+jsou vidět na obrázcích \ref{g1} a \ref{g2}. Z grafu \ref{g2} jsem následně určil isobestické body
+\begin{eqnarray}
+\lambda_0=410 \mbox{nm} \\
+\lambda_1=561 \mbox{nm}
+\end{eqnarray}
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\lambda/\mbox{nm}&   100\theta_{c_0}&   100\theta_{c_0/2}&    100\theta{c_0/4}&    100\theta{c_0/2\cdot c_{MgSO4}}& 100\theta{c_0/2\cdot 5c_{MgSO4}} \\ \hline
+400&    47& 72& 87& 72& 75 \\ \hline
+420&    54& 76& 88& 73& 73 \\ \hline
+440&    56& 77& 89& 69& 68 \\ \hline
+460&    55& 75& 88& 61& 60 \\ \hline
+480&    50& 72& 86& 51& 49 \\ \hline
+500&    40& 66& 82& 37& 35 \\ \hline
+520&    26& 55& 76& 29& 26 \\ \hline
+540&    16& 45& 70& 27& 26 \\ \hline
+560&    11& 41& 68& 39& 40 \\ \hline
+580&    8&  36& 66& 58& 62 \\ \hline
+600&    6&  34& 66& 72& 81 \\ \hline
+620&    6&  34& 68& 79& 90 \\ \hline
+640&    9&  38& 71& 82& 94 \\ \hline
+660&    20& 52& 78& 85& 96 \\ \hline
+680&    46& 72& 88& 91& 98 \\ \hline
+700&    72& 87& 95& 96& 99 \\ \hline
+\end{array}
+$$
+\caption{Neměření hodnoty vnitřní transmitance v závislosti na vlnpvé délce}
+\label{TM}
+\end{table}
+
+Pro vlnové délky 440, 540 a 640 nm jsem z hodnoty $\theta_{c_0}$ vypočetl $\varepsilon$ 
+pro danou vlnovou délku.
+\begin{eqnarray}
+lc_0\varepsilon{440}=0.25181 \\
+lc_0\varepsilon{540}=0.79588\\
+lc_0\varepsilon{640}=1.04576\\
+\end{eqnarray}
+Dále dosadil do Lambert-Beerova zákonu abych dopočítal teoretické hodnoty s určil rozdíl odhodnot naměřených.
+\begin{eqnarray}
+100\Delta\theta_{c_0/2}(440)=-2 \\
+100\Delta\theta_{c_0/4}(440)=-2 \\
+100\Delta\theta_{c_0/2}(540)=-5 \\
+100\Delta\theta_{c_0/4}(540)=-7 \\
+100\Delta\theta_{c_0/2}(640)=-8 \\
+100\Delta\theta_{c_0/4}(640)=-16 \\
+\end{eqnarray}
+
+
+\begin{figure}
+\input{g1.tex}
+\caption{Graf závislosti transmitance na vlnové délce}
+\label{g1}
+\end{figure}
+
+\begin{figure}
+\input{g2.tex}
+\caption{Graf závislosti transmitance na vlnové délce}
+\label{g2}
+\end{figure}
+
+Měřící přístroj měj třidu přesnosti jedna, což odpovídá chybě jedné setiny u 
+vnitřní transmitance. Vlnová délka byla určena s přesností v řádu procent. Vliv odrazů a vody byl díky metodě měření zanedbatelný. Chyba u šířky kyvety byla o dva řády nižší, a proto ji můžeme 
+zanedbat. Chyba absorbčního koeficientu je dle \cite{chyba}
+\begin{eqnarray}
+\sigma_A=-\frac{\sigma_\theta}{\theta \ln 10}
+\end{eqnarray}
+
+\section{Diskuze}
+Naměřené hodnoty v rámci chyby splňují teoretické předpoklady. Odchylka od teoretických 
+hodnot sice s vlnovou délkou rostla, ale to bylo nejspíše způsobeno velkou relativní chybou vnitřní transmitance při měření malých hodnot. Při výpočtu $\varepsilon$ z hodnot prp nižší koncentrace by byla chyba výrazně nižší.
+
+Co se týče příměsi, tak na grafu \ref{g2} jsou dobře vidět dva isobestické body. U prvního se projevila větší chyba způsobená měřením v oblasti nižšího výkonu rtuťové výbojky.
+
+\section{Závěr}
+Změřil jsem absorbční spektrum kalagmitu o různé koncentraci. Výsledky jsou v tabulce \ref{TM} a na obrázku \ref{g1}. Pro hodnoty 440, 540 a 640 nm jsem ověřil platnost Lambert-Beerova zákona. \\
+Měření jsem doplnil roztokem s příměsí MgSO4. Výsledky jsou v tabulce \ref{TM} a na obrázku \ref{g2}. Určil jsem isobestické body
+\begin{eqnarray}
+\lambda_0=410 \mbox{nm} \\
+\lambda_1=561 \mbox{nm}
+\end{eqnarray}
+
+Provedl jsem odhad chyby transmitance a vypočetl chybu absorbčního koeficientu
+\begin{eqnarray}
+\sigma_A=-\frac{\sigma_\theta}{\theta \ln 10}
+\end{eqnarray}
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum III} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_317.htm (20. 4. 2012)
+	\bibitem{text2} \textbf{Studijní text na praktikum III} \\http://physics.mff.cuni.cz/vyuka/zfp/mereni\_317.htm (20. 4. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+    \bibitem{maly} \emph{prof. RNDr. Petr Malý , DrSc.}: \textbf{Optika}\\Univerzita Karlova v Praze, Nakladatelství Karolinum 2008, první vydání
+\end{thebibliography}
+
+
+
+
+
+
+\end{document}

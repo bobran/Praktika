@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+\section{Úkol}
+\noindent
+\begin{enumerate}
+    \item Změřte průměry šesti drátů na pracovní desce.
+    \item Změřte odpor šesti drátů Wheatstoneovým a Thomsonovým můstkem Metra - MTW. Vysvětlete rozdíly ve výsledcích měření.
+    \item Změřte odpory ve čtyřbodovém zapojení pomocí multimetru KEITHLEY 2010
+    \item Určete měrný odpor jednotlivých vzorků i s příslušnou chybou výsledku. Stanovené hodnoty porovnejte s hodnotami uváděnými v tabulkách. 
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Čtyřbodové zapojení}
+Čtyřbodové zapojení je způsob zapojení rezistoru za pomoci čtyř kontaktů, kde pár je proudový a druhý pár slouží na měření napětí.
+
+\subsection{Wheatstoneův a Thomsonův můstek}
+Tyto můstky jsou soustavy rezisorů, které na základě porovnávání velikostí odporů umožňují stanovení odporu měřeného rezistoru. Thomsonův má tu výhodu, 
+že se s ním dá měřit čtyřbdovou metodou, díky čemuž se lépe měří malé odpory.
+
+\subsection{Měrný odpor}
+Měrný odpor homogeního vodiče je definován vztahem
+\begin{eqnarray}
+\rho=\frac{RS}{l},
+\label{rho}
+\end{eqnarray}
+kde $R$ je dpor, $S$ průřez a $l$ délka. Jeho jednotkou je $\Omega\cdot$m.
+
+\subsection{Chyby}
+Můstek má chybu 0.02\% až na kotouč s $0.1\Omega$, kde je tato chyba 0.1\%. Multimetr KEITHLEY 2010 jsem počítal chybu 0.006\%, která odpovídá tomu, že byl kalibrován nejdéle před rokem.
+
+Při výpočtu veličiny se u součinu a podílu sčítají relativní chyby jednotlivých veličin. Absolutní chybu získáme následným vynásobením vypočítané hodnoty sumou relativních chyb.
+
+
+\section{Měření}
+\subsection{Rozměry drátů}
+Pomocí mikrometru jsem měřil na sedmi místech průměry každého z drátů, které jsem následné statisticky vyhodnotil. Výsledky jsou v tabulce \ref{TD}. Délka každého 
+z drátl by měla být stejná, tak jsem změřil každý zvlášť a následně používal průměr těchto hodnot. Vyhodnocení je v tabulce \ref{TL}.
+
+\begin{table}
+$$
+\begin{array}{|l|ccccccc|c|}
+\hline
+\mbox{materiál}&    \multicolumn{8}{|c|}{d/\mbox{mm}} \\ \hline
+\mbox{W}&   0.682&  0.681&  0.685&  0.677&  0.682&  0.677&  0.690&  0.682\pm 0.002 \\ \hline
+\mbox{Cu}&  1.142&  1.102&  1.100&  1.116&  1.092&  1.086&  1.110&  1.108\pm 0.006 \\ \hline
+\mbox{konstantan}&  0.344&  0.348&  0.349&  0.349&  0.343&  0.343&  0.342&  0.345\pm 0.001 \\ \hline
+\mbox{Fe}&  0.407&  0.408&  0.404&  0.405&  0.407&  0.410&  0.404&  0.406\pm 0.001 \\ \hline
+\mbox{mosaz}&       0.590&  0.597&  0.593&  0.594&  0.590&  0.596&  0.595& 0.594\pm0.001 \\ \hline
+\mbox{chromnikl}&   1.001&  1.008&  1.005&  1.027&  1.013&  0.999&  1.001&  1.008\pm 0.003 \\ \hline
+\end{array}
+$$
+\caption{Průměry drátů}
+\label{TD}
+\end{table}
+
+\begin{table}
+$$
+\begin{array}{|c|cccccc|c|}
+\hline
+l/\mbox{cm}&    90.0&   89.9&   89.9&   89.9&   90.0&   89.9&   89.9\pm0.1 \\ \hline
+\end{array}
+$$
+\caption{Délky drátů}
+\label{TL}
+\end{table}
+
+\subsection{Odpory drátů}
+Následně jsem měřil odpory jednotlivých drátů Wheatstoneovým a Thomsonovým můstkem spolu s digitálním multimetrem KEITHLEY 2010. Věškeré výsledky jsou v tabulce \ref{TR}.
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+&   R_W/\Omega& R_T/\Omega& R_K/\Omega \\ \hline
+\mbox{W}&   0.17760\pm 0.00003& 0.13800\pm 0.00003  &   0.1374\pm0.0008 \\ \hline
+\mbox{Cu}&  0.05180\pm 0.00001& 0.016600\pm 0.000003&   0.0163\pm 0.0001 \\ \hline
+\mbox{konstantan}&  4.9536 \pm 0.0010  & 4.9200\pm 0.0010   & 4.92\pm 0.03   \\ \hline
+\mbox{Fe}& 1.5220\pm 0.0003 & 1.4860\pm 0.0003& 1.477\pm0.009 \\ \hline
+\mbox{mosaz}&  0.25550 \pm 0.00005 & 0.2200\pm 0.0004& 0.220\pm0.001 \\ \hline
+\mbox{chromnikl}&   1.1966 \pm 0.0002&  1.1620\pm 0.0002 &  1.180\pm0.007 \\ \hline
+\end{array}
+$$
+\caption{Odpory drátů}
+\label{TR}
+\end{table}
+
+\subsection{Měrné odpory drátů}
+Pro výpočet měrných odporů jednotlivých drátů jsem použil hodnoty odporů naměřené za pomoci Thomsonova můstku. Důvod, proč je považuji za nejvěrohodnější je uveden v diskuzi. 
+Měrný odpor jsem určil dle vztahu \ref{rho} a chybu jsem stanovil dle postupu uvedeném v teorii. Výsledky shrnuje tabulka \ref{TRho}, kde je navíc uvedena hodnota z tabulek.
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|}
+\hline
+&   \rho\cdot 10^6/\Omega\mbox{m}&\rho_{tab}\cdot 10^6/\Omega\mbox{m} \\ \hline
+\mbox{W}&   0.0561\pm 0.0004&   0.0536 \\ \hline
+\mbox{Cu}& 0.0178\pm 0.0002&    0.0169 \\ \hline
+\mbox{konstantan}&  0.512\pm 0.004& 0.490 \\ \hline
+\mbox{Fe}&  0.213\pm 0.003& 0.0996 \\ \hline
+\mbox{mosaz}&   0.0678\pm 0.0004&   0.075 \\ \hline
+\mbox{chromnikl}&  1.031\pm 0.007 & 1.08 \\ \hline
+\end{array}
+$$
+\caption{Měrné odpory kovů ve srovnáním s tabulkovými hodnotami.}
+\label{TRho}
+\end{table}
+
+\section{Diskuze}
+Nejslabší metodou na měření malých odporů byl Wheatstoneův můstek. Při této metodě se totiž do výsledku připočetla velikost odporu vodičů, která byla okolo 40 m$\Omega$. 
+Tato chyba u Thomsonova můstku nenastala díky čtyřbodovému zapojení. Měření za pomoci multimetru KEITHLEY 2010 má možná o něco větší chybu, než kterou bylo měření opravdu 
+zatíženo, protože ve specifikacích přístroje je tato chyba určena v závislosti od poslední kalibrace, což mi nebylo známo. Výsledky této metody se však schodovali s hodnotami 
+určenými Thomsonovým můstkem.
+
+Mnou určené hodnoty měrného odporu korespondují s těmi tabulkovými s jemnou odchylkou, která mohla být způsobena zahříváním vodičů, či nedokonalostí vodivých spojů. Jedinou 
+vyjimkou je železo, u  kterého mi vyšla ve srovnání s tabulkami dvoujnásobná hodnota. Důvod této chyby jsem však nenašel.
+
+\section{Závěr}
+\noindent
+Změřil jsem průměry drátů a stanovil jejich statistickou hodnotu. Výsledky jsou v tabulce \ref{TD}. \\
+Změřil jsem odpory drátů za pomoci Weatstoneova a Thomsonova můstku a vysvětlil rozdíl ve výsledku. Výsledky jsou v tabulce \ref{TR}. \\
+Změřil jsem odpory drátů ve čtyřbodovém zapojení za pomoci multimetru KEITHLEY 2010. Výsledky jsou v tabulce \ref{TR}. \\
+Určil jsem veliokst měrných odporů jednotlivých kovů včetně jejich chyb. Výsledky jsou v tabulce \ref{TRho}.
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum II} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_204.pdf (2. 12. 2011)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+\end{thebibliography}
+
+\end{document}

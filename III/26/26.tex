@@ -1,0 +1,196 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+\newcommand{\st}{^{\circ}}
+\newcommand{\RJ}{\mbox{RJ}}
+\newcommand{\mV}{\mbox{m}/\mbox{V}^2}
+
+\section{Úkol}
+\begin{enumerate}
+    \item Navažte laserový svazek do vlákna a seřiďte jednotlivé moduly tak, abyste dosáhli maximálního výkonu na výstupu z vlákna.
+    \item Změřte numerickou aperturu vlákna, zpracujte graficky.
+    \item Změřte dobu průchodu světla vláknem, určete rychlost světla ve vlákně.
+    \item Určete relativní výstupní výkon laserové diody v závislosti na napájecím proudu, zpracujte graficky. 
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Apertura optického vlákna}
+Apertura optického vlákna je dle \cite{text}
+\begin{eqnarray}
+A=sin \vartheta = \sqrt{n_k^2-n_m^2},
+\label{A}
+\end{eqnarray}
+kde $\vartheta$ je úhel od optické osy, při kterém velikost intenzity klesne na 1/e$^2$ a $n$ indexy lomu pro vlákno.
+
+\subsection{Rychlost světla}
+V materiálu se světlo šíří pomaleji než ve vekuu. Proto se zavádí index lomu, který je definován
+\begin{eqnarray}
+n=\frac{c}{v},
+\end{eqnarray}
+kde $c$ je rychlost světla ve vakuu a $v$ rychlost v prostředí. Tento vztah se dá lehce upravit na výpočet rychlosti při znalosti indexu lomu na
+\begin{eqnarray}
+v=\frac{c}{n}
+\end{eqnarray}
+
+\section{Měření}
+\subsection{Navázání svazku}
+Dle postupu uvedeném v \cite{text} jsem nejprve seřídil aparaturu tak, abych docílil na detektoru co největší intenzity. 
+Následně jsem přidal optické vlákno a paprsek zaostřil na jeho začátek upevněný v držáku. Výstup jsem umístil do držáku s úhlovou stupnicí, 
+na které jsem nastavil nulu a opět celou aparaturu seřídil, aby na detektoru byla maximální intenzita.
+
+\subsection{Apertura vlákna}
+V závislosti na úhlu, pod kterým byl detektor vůči vláknu jsem měřil intenzitu světla na něj dopadající. Naměřené hodnoty jsou v tabulce \ref{TA}. Intenzita je uvedena v relativních jednotkách. Těmto datům jsem nafitoval Gaussovu funkci, která má předpis
+\begin{eqnarray}
+I(\varphi)=(117 \pm 4)\mbox{exp}\left(\frac{(\varphi-(0.15\pm0.17))^2}{2*(4.10\pm0.17)^2}\right)
+\end{eqnarray}
+Díky tomu jsem určil aperturu, která je výpočtem z rovnice \ref{A} rovna
+\begin{eqnarray}
+A=(0.145 \pm 0.007)
+\end{eqnarray}
+její teoretická hodnota je
+\begin{eqnarray}
+A_{teo}=0.094
+\end{eqnarray}
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+\varphi/\st&    I/\RJ \\ \hline
+0&  112 \\ \hline
+2&  103 \\ \hline
+4&  81.6 \\ \hline
+6&  46.2 \\ \hline
+8&  10.7 \\ \hline
+10& 1.13 \\ \hline
+-2& 101 \\ \hline
+-4& 75.0 \\ \hline
+-6& 43.6 \\ \hline
+-8& 5.76 \\ \hline
+-10&    1.70 \\ \hline
+\end{array}
+$$
+\caption{Závislost intenzity laseru na úhlu od optické osy.}
+\label{TA}
+\end{table}
+
+\begin{figure}
+\input{g1.tex}
+\caption{Graf závislosti intenzity na úhlu od optické osy.}
+\label{g1}
+\end{figure}
+
+
+\subsection{Rychlost světla ve vlákně}
+Po připojení bočníku jsem z osciloskopu odečetl časy pro vlákno a bez vlákna
+\begin{eqnarray}
+T_1=0.54\mu\mbox{s} \\
+T_2=1.20\mu\mbox{s}
+\end{eqnarray}
+Světlo tedy procházelo vláknem $(0.64 \pm 0.01) \mu$s, 
+z čehož jsem stanovil rychlost světla ve vlákně
+\begin{eqnarray}
+v_{mer}=(148\pm 2) \mbox{m}/\mu\mbox{s}
+\end{eqnarray}
+Teoretická hodnota je pro srovnání
+\begin{eqnarray}
+v_{teo}=205.48\mbox{m}/\mu\mbox{s}
+\end{eqnarray}
+
+\subsection{Výkon laseru}
+Bez vlákna jsem proměřil závislost intenzity laseru na napětí na laseru. Výsledky jsou 
+v tabulce \ref{TV}. Data jsou vynesena do grafu na obrázku \ref{g2}. Hodnoty neodpovídají 
+teoretické závislosti, proto muselo dojít při měření k hrubé chybě. Proto v grafu není 
+vynesena žádná křivka. Více je uvedeno v diskuzi.
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+U/\mbox{V}& I/\RJ \\ \hline
+100&    287 \\ \hline
+90& 277 \\ \hline
+80& 272 \\ \hline
+70& 264 \\ \hline
+60& 254 \\ \hline
+50& 237 \\ \hline
+40& 214 \\ \hline
+30& 97 \\ \hline
+25& 70.8 \\ \hline
+20& 57.0 \\ \hline
+15& 43.8 \\ \hline
+10& 28.3 \\ \hline
+5&  9.35 \\ \hline
+0&  0 \\ \hline
+\end{array}
+$$
+\caption{Závislost intenzity laseru na vstupním napětí.}
+\label{TV}
+\end{table}
+
+\begin{figure}
+\input{g2.tex}
+\caption{Graf závislosti intenzity laseru na vstupním napětí}
+\label{g2}
+\end{figure}
+
+\section{Diskuze}
+Navázání laserového paprsku na optické vlákno se mi podařilo až po novém přelomení vlákna, které bylo 
+původně pod mikroskopem znatelné poškozené a jádro vypadalo zlomené. Na výstuou pak bylo možně 
+detekovat dobrý signál. Měření však stejné i při použití modulovaného signálu muselo probíhat v 
+zatemněné místnosti, protože i výkon lampy byl o řádově vyšší.
+
+Naměřená velikost apertury je větší než teoretická. To bylo nejpravděpodobněji způsobeno lehkými 
+odrazy laseru od součástek aparatury a především zbytky světla, které nevstoupili do vlákna. 
+Další možnost by mohl být jiný index lomu, než byl uveden u úlohy.
+
+Rychlost světla ve vlákně vyšla o čtvrtinu nižší než teoretická. To by poukazovalo na jiný index lomu, 
+než byl uveden u úlohy, což by vysvětlovalo i problém uvedený výše. Výsldek také mohla ovlivnit délka clákna, 
+které nebylo možné změřit. Počítal jsem s délkou 98 metrů. Vliv délky však rozhodně nebyl tak výrazný, aby 
+se naměřená hodnota schodovala s teoretickou ba naopak působila proti rozdílu hodnot.
+
+Závislost intenzity laseru na vstupním napětí vyšla zcela jinak než bylo předpokládáno. Výstup laseru jsem 
+zřejně špatně nastavil a zaostřil na detektor. Proto se projevila až skoková změna intenzity způsobená zůžením 
+laserového svazku mimo detektor. Intenzita však stále má v jednotlivých oblastech lineární průběh, avšak zápalné 
+napětí nejsem sto určit.
+
+\section{Závěr}
+\noindent
+Navázal jsem laserový svazek na optické vlákno. \\
+Proměřil jsem závislost intenzity a úhlu od optické osy a stanovil hodnotu apertury
+\begin{eqnarray}
+A=(0.145 \pm 0.007)
+\end{eqnarray}
+Změřil jsem dobu, za kterou světlo projde optickým vláknem a z toho vypočítal jeho rychlost v něm
+\begin{eqnarray}
+T = (0.64 \pm 0.01) \mu \mbox{s} \\
+v_{mer}=(148\pm 2) \mbox{m}/\mu\mbox{s}
+\end{eqnarray}
+Proměřil jsem závislost intenzity laseru na vstupním napětí. Tuto závislosti nebylo možné proložit křivkou.
+
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum III} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_326.htm (2. 4. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+    \bibitem{maly} \emph{prof. RNDr. Petr Malý , DrSc.}: \textbf{Optika}\\Univerzita Karlova v Praze, Nakladatelství Karolinum 2008, první vydání
+\end{thebibliography}
+
+
+
+
+\end{document}

@@ -1,0 +1,296 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+\section{Úkol}
+\noindent
+\begin{enumerate}
+	\item Změřte momenty setrvačnosti kvádru vzhledem k hlavním osám setrvačnosti
+	\item Určete složky jednotkového vektory ve směru zadané osy rotace kvádru 
+	v souřadné sousavě dané hlavními osami setrvačnosti.
+	\item Vypočítejte moment setrvačnosti kvádru vzhledem k zadané obecné ose 
+	rotace. Výsledek ověřte měřením.
+	\item Měrně ověřte Steinerovu větu.
+\end{enumerate}
+
+\section{Teorie}
+\noindent
+Moment setrvačnosti $J$ je symetrický tenzor charakteryzující tuhé těleso. Každé těleso 
+má tři na sebe kolmé osy, kdy je tento tenzo v diagonalizovaném tvaru. Tyto osy se 
+nazývají hlavní a většinou se jedná o osy symetrie.
+
+Pro symetrická tělesa jsou známy vztahy pro výpočet jejich momentu setrvačnosti. Např. 
+moment setrvačnosti válce podle osy procházející těžistěm a rovnoběžné s výškou platí
+\begin{eqnarray}
+	J_V=\frac{1}{2}MR^2,
+\end{eqnarray}
+kde $M$ je hmotnost válce a $R$ jeho poloměr. Více naleznete např. v \cite{Kvasnica}.
+
+Dalším důležitým vztahem pro určování momentu setrvačnosti pro jiné osy je Steinerova věta
+\begin{eqnarray}
+	J=J_0+md^2,
+\end{eqnarray}
+kde $J_0$ moment setrvačnosti těleda pro osu procházející těžištěm, $m$ hmotnost tělesa 
+a $d$ vzdálenost os. Ta však platí pouze pro osy, které jsou vzájemně rovnoběžné.
+
+Při kmitání tuhého tělesa na torzním vlákně je perioda tohoto pohybu dána vztahem
+\begin{eqnarray}
+	T=2\pi \sqrt{\frac{J}{D}},
+\end{eqnarray}
+kde $J$ je složka tenzoru setrvačnosti pro danou osu a $D$ deviační moment.
+Pokud máme těleso se známým momentem setrvačnosti, můžeme změřit periodu jeho kmitání 
+a pro naše neznámé těleso užijeme vztah
+\begin{eqnarray}
+	J=\frac{T^2}{T_T^2}J_T,
+	\label{vypocet J}
+\end{eqnarray}
+který vychází z rovnosti deviačních momentů. 
+
+Pro moment setrvačnosti vzhledem k zadané obecné ose platí vztah
+\begin{eqnarray}
+	J_v=v_x^2J_{0x}+v_y^2J_{0y}+v_z^2J_{0z},
+\end{eqnarray}
+kde $J_i$ jsou složky tenzoru setrvačnosti a $\vec v$ je jednotkový vektor definovaný 
+\begin{eqnarray}
+v_x=\frac{a}{\sqrt{a^2+b^2+c^2}},v_y=\frac{b}{\sqrt{a^2+b^2+c^2}},v_z=\frac{c}{\sqrt{a^2+b^2+c^2}},
+\end{eqnarray}
+kde $a$, $b$, $c$ jsou rozměry kvádru.
+
+Pro těleso kývající se podle pevné osy platí vztah
+\begin{eqnarray}
+	T=2\pi\sqrt{\frac{J}{mgd}},
+\end{eqnarray}
+kde $J$ je moment setrvačnosti, $m$ hmotnost tělesa, $g$ tíhové zrychlení a $d$ 
+vzdálenost těžiště od osy otáčení. Z něj můžeme vyjádřit vztah pro výpočet 
+momentu setrvačnosti
+\begin{eqnarray}
+	J=mgd\left(\frac{T}{2\pi}\right)^2
+\end{eqnarray}
+
+Podrobný návod naleznete v \cite{text}.
+
+\section{Výsledky měření}
+\subsection{Moment setrvačnosti kvádru vzhledem k hlavním osám}
+Mejprve jsem zvážil válec ($m_V$) a kvádr ($m_K$). Jejich hmotnosti jsou i s chybou 
+určenou dle \cite{chyba}
+\begin{eqnarray}
+	m_V=(903.9\pm0.2)\mbox{g} \\
+	m_K=(1072.0\pm0.2)\mbox{g} 
+\end{eqnarray}
+
+Poté jsem změřil průměr válce $D$ a rozměry kvádru, které jsou vyznačeny na obrázku 1. 
+Výsledné hodnoty jsou
+\begin{eqnarray}
+	D=(108.06\pm0.02)\mbox{mm} \\
+	a=(127.92\pm0.02)\mbox{mm} \\	
+	b=(64.10\pm0.02)\mbox{mm} \\
+	c=(18.81\pm0.02)\mbox{mm}
+\end{eqnarray}
+
+Následně jsem měřil dobu pěti nebo 10 period kmitů válce a kvádru podle různých os, 
+přičemž délce $a$ odpovídá osa x, $b$ osa y a $c$ osa z. Naměřené hodnoty jsou shrnuty v tabulce 1. 
+Počet měření jsem postupně snižoval, protože jejich vyšší počet by neměl výrazný 
+vliv na velikost chyby.
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+n&	5\cdot T_{0V}/\mbox{s}&		10\cdot T_{0x}/\mbox{s}&		5\cdot T_{0y}/\mbox{s}&		5\cdot T_{0z}/\mbox{s}&		5\cdot T_{0v}/\mbox{s}	\\ \hline
+1&	55.03&				57.81&				52.77&				59.12&				35.33			\\ \hline
+2&	54.98&				57.83&				52.88&				58.89&				35.00			\\ \hline
+3&	55.20&				57.76&				52.71&				59.07&				35.46			\\ \hline
+4&	55.10&				57.93&				52.82&				59.04&				35.32			\\ \hline
+5&	55.19&				57.82&				52.68&				58.89&				35.20			\\ \hline
+6&	55.06&				57.76&				52.87& & \\ \hline
+7&	54.99&				57.71&				52.96& & \\ \hline
+8&	55.01&				57.77&				52.87& & \\ \hline
+9&	55.13&				57.80& & & \\ \hline
+10&	54.96&				57.77& & & \\ \hline
+\end{array}
+$$
+\vglue.5cm
+\begin{center}
+\textbf{Tabulka 1:} Periody kmitání podle různých os.
+\end{center}
+
+Měření jsme statisticky vyhodnotil dle \cite{chyba} a stanovil výsledné periody
+\begin{eqnarray}
+	T_{0V}=(11.01 \pm 0.04)\mbox{s} \\
+	T_{0x}=(5.78 \pm 0.02)\mbox{s} \\
+	T_{0y}=(10.56 \pm 0.04)\mbox{s} \\
+	T_{0z}=(11.80 \pm 0.04)\mbox{s} \\
+	T_{0v}=(7.05 \pm 0.04)\mbox{s} \\
+\end{eqnarray}
+
+Dle (1) jsem vypočetl moment setrvačnosti válce
+\begin{eqnarray}
+	J_{0V}=(528\pm4)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.\\
+\end{eqnarray}
+Poté jsem dle (4) určil momenty setrvačnosti kvádru vzhledem k hlavním osám
+\begin{eqnarray}
+	J_{0x}=(145\pm1)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,\\
+	J_{0y}=(485\pm4)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,\\
+	J_{0z}=(606\pm5)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+\subsection{Moment setrvačnosti kvádru vzhledem k zadané ose}
+\noindent
+Podle vzorců (6) jsem stanovil složky jednotkového vektoru $\vec v$
+\begin{eqnarray}
+	v_x=0.886\pm0.001\\
+	v_y=0.444\pm0.001\\
+	v_z=0.130\pm0.001
+\end{eqnarray}
+a dopočital dle (5) moment setrvačnosti vzhledem k zadané ose
+\begin{eqnarray}
+	J_{v}=(72\pm2)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+Pro tuto osu jsem také určil moment setrvačnosti metodou uvedenou výše, kde je uvedena 
+i perioda kmitání podle této osy $T_{0v}$
+\begin{eqnarray}
+	J_{0v}=(118\pm1)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+\subsection{Steinerova věta}
+\noindent
+Nejprve jsem mnou zkoumanou tyč zvážil
+\begin{eqnarray}
+	m_t=(281.6\pm0.2)\mbox{g}
+\end{eqnarray}
+a určil vzdálenost těžiště od břitu, kolem kterého se otáčí. Tato vzdálenost se špatně 
+určovala, proto jsem měření opakovalm, přičemž naměřené hodnoty jsou uvedeny v tabulce 2.
+$$
+\begin{array}{|c|ccccc|}
+\hline
+d/\mbox{cm}&	15.7&	15.6&	15.6&	15.5&	15.6 \\
+\hline
+\end{array}
+$$
+\vglue.5cm
+\begin{center}
+	\textbf{Tabulka 2:} Vzdálenost těžiště od břitu.
+\end{center}
+Tyto hodnoty jsem dle \cite{chyba} vyhodnotil a výsledná vzdálenost je
+\begin{eqnarray}
+	d=(15.6\pm0.1)\mbox{cm}
+\end{eqnarray}
+
+Následně jsem dle postupu výše určil moment setrvačnosti tyče dle osy procházející těžištěm
+\begin{eqnarray}
+	J_{0t}=(1107\pm9)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,
+\end{eqnarray}
+přičemž perioda kmitu tyče byla
+\begin{eqnarray}
+	T_{0t}=(15.95\pm0.01)\mbox{s}.
+\end{eqnarray}
+Tuto periodu jsem určil ze dvou měření deseti period, přičemž druhé měření bylo pouze pro 
+vyloučení hrubé chyby způsobené např. špatným spočítáním kmitů.
+
+Hodnotu $J_{0t}$ jsem přepočetl dle (2) pro osu procházející břitem
+\begin{eqnarray}
+	J_t=(179\pm1)\cdot 10^{-4} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+Nakonec změřil dobu deseti kmitů kyvadla sestrojeného z tyče se břitem v ložisku. Tyto 
+hodnoty jsou v tabulce 3.
+\eject
+$$ 
+\begin{array}{|c|c|c|c|}
+\hline
+n&	10\cdot T_t/\mbox{s}&	n&	10\cdot T_t/\mbox{s}\\	\hline
+1&	9.38&	6&	9.38 \\ \hline
+2&	9.42&	7&	9.42 \\ \hline
+3&	9.47&	8&	9.38 \\ \hline
+4&	9.45&	9&	9.48 \\ \hline
+5&	9.40&	10&	9.40 \\ \hline
+\end{array}
+$$
+\vglue.5cm
+\begin{center}
+	\textbf{Tabulka 3:}Doba deseti kmitů kyvadla.
+\end{center}
+Výsledná perioda kyvadla je včetně chyby
+\begin{eqnarray}
+	T_{t2}=(0.86\pm0.09)\mbox{s}
+\end{eqnarray}
+a použitím vztahu (8) jsem získal memont setrvačnosti
+\begin{eqnarray}
+	J_{t2}=(800\pm200)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+\section{Diskuze}
+\noindent
+Mnou naměřené hodnoty se s těmi teoreticky vypočítanými značně liší. Chyba je zajisté 
+v měření. Vzorec odvozený pro stanovení momentu setrvačnosti z torze vlákna počítá 
+s ideálními podmínkami. Vlákno však bylo zjevně opotřebené častým používáním a v jednom 
+místě značně defotmované. 
+
+Další věc, se kterou jsem nepočítal byl úchyt vlákna. Jednalo 
+se o šroub, který se upevnil do zkoumaného tělesa. I při pečlivém utažení však zajisté 
+docházelo k povolování závitu, což se projevilo na výsledcích měření. Samotné měření 
+času tak napřesné nebylo. 
+
+Chyba způsobená rekční dobou a nepřesností určení přesné periody 
+se na tak velkém časovém pseku neprojevila. 
+
+Poslední chyba, která vznikla při určování 
+momentu setrvačnosti podle obecné osy vznikla tak, že zkoumané těleso ve skutečnosti kvádr 
+nebylo. Bylo výrazně zkosené v rozích.
+
+Z mých výpočtů také vyplývá, že Steinerova věta neplatí, o čemž pochybuji a problém je opět 
+na strane správného určení momentu setrvačnosti. Měření periody kyvadla již tak přesné nebylo 
+a ve vzorci je jsou opět zanedbány vnější vlivy, odporové síly atd.
+
+\section{Závěr}
+\noindent
+Změřil jsem momenty setrvačnosti tělesa vzhledem k hlavním osám
+\begin{eqnarray}
+	J_{0x}=(145\pm1)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,\\
+	J_{0y}=(485\pm4)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,\\
+	J_{0z}=(606\pm5)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+Určil jsem složky jednotkového vekoru zadané osy v souřadném systému hlavních os
+\begin{eqnarray}
+	v_x=0.886\pm0.001,\\
+	v_y=0.444\pm0.001,\\
+	v_z=0.130\pm0.001.
+\end{eqnarray}
+Určil jsem moment setrvačnosti vzhledem k zadané ose jak výpočtem
+\begin{eqnarray}
+	J_{v}=(72\pm2)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2,
+\end{eqnarray}
+tak měřením
+\begin{eqnarray}
+	J_{0v}=(118\pm1)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+Nepodařilo se mi ověřit platnost Steinerovy věty. Naměřená hodnota momentu setrvačnosti byla
+\begin{eqnarray}
+	J_{t2}=(800\pm200)\cdot 10^{-5} \mbox{kg}\cdot\mbox{m}^2
+\end{eqnarray}
+a dle této věty vypočtená
+\begin{eqnarray}
+	J_t=(179\pm1)\cdot 10^{-4} \mbox{kg}\cdot\mbox{m}^2.
+\end{eqnarray}
+
+
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum I} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_117.pdf (8. 4. 2011)
+	\bibitem{Kvasnica} \emph{Prof. RNDr. Jozef Kvasnica, DrSc. a kolektiv}: \textbf{Mechanika}\\ Academia, Praha 1988
+        \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+\end{thebibliography}
+\end{document}

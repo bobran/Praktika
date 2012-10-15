@@ -1,0 +1,150 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+
+\section{Úkol}
+\begin{enumerate}
+    \item Změřte divergenci laserového svazku.
+    \item Z optické stavebnice sestavte Michelsonův interferometr. K rozšíření svazku sestavte Galileův teleskop. Ze známých ohniskových délek použitých čoček spočtěte, kolikrát bude laserový svazek rozšířen a porovnejte s naměřenou hodnotou.
+    \item Pozorujte interferenční proužky při změně polohy zrcadla $\mbox{Z}_3$, vysvětlete pozorovaný efekt. Do jednoho z interferujících svazků vložte některé z přiložených skel. Popište a vysvětlete změny v interferenčním obrazci. 
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Divergence paprsku}
+Divergence paprsku je definována vztahem
+\begin{eqnarray}
+d=\frac{D_2-D_1}{s},
+\label{d}
+\end{eqnarray}
+kde $D_1$ je průměr paprsku na začátku a $D_2$ průměr po uražení dráhy $s$. Minimální dosažitelná divergence je dána vztahem
+\begin{eqnarray}
+d_m\approx \frac{2\lambda}{D_1},
+\label{dm}
+\end{eqnarray}
+kde $\lambda$ je vlnová délka daného paprsku.
+
+\subsection{Galileův teleskop}
+Galileův teleskop se skládá z rozptylky a spojky, které mají jedno společné ohnisko. Jeho zvětšení je dáno vztahem
+\begin{eqnarray}
+Z=\frac{f_1}{f_2}.
+\label{Z}
+\end{eqnarray}
+
+\subsection{Interference}
+Interference vzniká z důvodu fázového rozdílu světla dopadajícího do jednoho bodu, kde se vlny skládájí. U světla ze stejného zdroje (stejnou počáteční fází) je fázový nábéh způsoben rozdílem drahovým. Pomínky pro maximum a minimum jsou
+\begin{eqnarray}
+2(l_2-l_1)=k\lambda \\
+2(l_2-l_1)=k\lambda + \lambda/2
+\end{eqnarray}
+Více naleznete v \cite{maly}.
+
+\section{Měření}
+
+\subsection{Divergence laserového svazku}
+Nejprve jsem změřil divergenci laserového svazku. Vzhledem k nepřesnosti při měření průměru stačilo pro měření dráhy pouze jedno měření
+\begin{eqnarray}
+s=(255.0\pm0.1)\mbox{cm}
+\end{eqnarray}
+U průměru zase byla chyba měřidla tak výrazná, že opakování měření nemělo smysl.
+\begin{eqnarray}
+D_1=(1.0\pm0.5)\mbox{mm} \\
+D_2=(6.0\pm0.5)\mbox{mm}
+\end{eqnarray}
+Po dosazení do zvtahu \ref{d} získáme
+\begin{eqnarray}
+d=0.0020 \pm 0.0004.
+\end{eqnarray}
+Pro srovnání, minimální dosažitelnou divergencí pro laser o $\lambda=632.8$ nm je
+\begin{eqnarray}
+d_m=0.0013
+\end{eqnarray}
+
+\subsection{Sestavení stavebnice}
+Dle návodu v \cite{text} jsem postupně přidával jednotlivé optické součástky. Po přidání každé jsem vždy 
+doladil výsku paprsku, a to za pomoci obrazu, který dopadal na stínítko u zdroje. Po seřízení zrcadel jsem 
+nejprve přidal mezi zrcadla Z$_1$ a Z$_2$ rozptylku, kterou jsem seřídil tak, aby světlo z ní vychátející dopadalo 
+na střed zrcadla Z$_2$. Nastavení jsem upravoval podle obrazu na stínítku za zrcadlem Z$_2$. Následně jsem do vzdálenosti 
+175 mm umístil spojnou čočku. Tento odhad byl určen dle přibližných ohniskových vzdáleností použitých čoček, které byly
+\begin{eqnarray}
+f_1=-25\mbox{mm} \\
+f_2=200\mbox{mm}
+\end{eqnarray}
+Následně jsem doostřil tak, aby obraz na stínítku u zdroje byl stejný jako před přidáním čoček.
+
+Při toumto rozložení jsem mezi zrcadly Z$_2$ a Z$_3$ změřil průměr svazku
+\begin{eqnarray}
+D'_2=(9.0 \pm 0.5) \mbox{mm},
+\end{eqnarray}
+což dle vztahu \ref{Z} dává zvětšení
+\begin{eqnarray}
+Z=9 \pm 1
+\end{eqnarray}
+Teoretická hodnota zvětšení pro čočky s parametry uvedenými výše je
+\begin{eqnarray}
+Z_t=8
+\end{eqnarray}
+
+Nakonec jsem přidal dělič svazku a poslední zracadlo. Výsledný interferenční obrazec jsem ještě za pomoci spojné čočky zvětšil.
+
+\subsection{Interferenční obrazec}
+Na vzniklém obraze byly jasně viditelné interferenční obrazce. Vyzkoušel jsem jiich chování při posunu zrcadla Z$_3$ a při různé 
+manipulaci se zrcadly. Dále jsem zkusil účinek různých sklíček a ohževu vzduchu v místě průchod paprsku. Výsledky jsou shrnuty v diskuzi.
+
+\section{Dikuze}
+Naměřená hodnota divergence svazku je spíše pro představu, že se paprsek příliš nerozbíhá, než že by se dala nějak použít. Trpí totiž 
+velkou chybou, která je způsobena nevhodností milimetrového papíru na měření řádově milimetrového paprsku. Pro představu je však zcela dostačující, 
+protože se k žádným výpočtům nepoužívá.
+
+Zvětšení koresponduje s teoretckou hodnotou.Tomu také nasvědčoval fakt, že nebylo třeba při doostřování příliš měnit vzdálenost mezi čočkami. 
+Odchylka je způsobena opět chybou milimterového papíru.
+
+Interferenční obrazce nebylo příliš sto upravovat za pomoci posuvu zrcadel. Při sebejemnějším pohybu byly změny příliš velké na to, aby se dali pozorovat. 
+K pohybu totiž sloužil mikrometrický šroub, kde posun o jeden dílek byl o dva řády vyšší než vzdálenost potřebná ke zmněně z minima na maximum. Obrazec se 
+proto nohem lépe upravoval za pomoci natáčení jednoho ze zrcadel, při čemž vnikal vírazně menší drahový rozdíl. V závislosti na vzájemné poloze stop paprsku 
+se měnila nejen vzdálenost proužků, ale i jejich vzálemná orientace. Proužky byly vždy kolmé na spojnici středů stop papsrsku a s rostoucí vzáleností se proužky 
+zhušťovaly. Nejmenší mnou dosažený výsledek byly tři proužky. Přiložená sklíčka lokálně deformavala proužky. Ve skle totiž světlo cestuje pomaleji a v důsledku 
+nehomogenity v tloušťce sklíček tak vzniká další drahový rozdíl. U tlustčího sklíčka byl jev samozřejmně zřetelnější. Podobný efekt mělo zahřátí  vzduchu pouze 
+za pomoci ruky. Vlivem vyšší teploty se vzruch zřiďuje, čímž v něm lehce stoupá rychlost světla. Tento efekt měl za následek vlnění proužků. Při použití zapalovače 
+pak vznikla ostrá hrana, která se opět mírně vlnila.
+
+Celá aparatura byla poměrně náchylná na jakékoliv otřesy. To občas zplsobilo rozostření obrazu či lehčí změnu na interferenčních proužcích. Výsledné 
+závěry to však nijak neovlivnilo, naopak mnohdy navodilo nové situace.
+
+\section{Závěr}
+\noindent
+Změřil jsem divergenci laserového paprsku
+\begin{eqnarray}
+d=0.0020 \pm 0.0004.
+\end{eqnarray}
+Sestavil jsem Mikelsonův interferometr a změřil rozšíření paprsku
+\begin{eqnarray}
+Z=9 \pm 1
+\end{eqnarray}
+Pozoroval jsem změnu interferenčního obrazce v závislosti na různých vlivech.
+
+\eject
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum III} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_320.htm (8. 3. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+    \bibitem{maly} \emph{prof. RNDr. Petr Malý , DrSc.}: \textbf{Optika}\\Univerzita Karlova v Praze, Nakladatelství Karolinum 2008, první vydání
+\end{thebibliography}
+
+
+
+
+\end{document}

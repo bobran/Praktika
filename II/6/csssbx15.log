@@ -1,0 +1,31 @@
+This is METAFONT, Version 2.718281 (TeX Live 2009/Debian) (base=mf 2011.4.10)  21 NOV 2011 14:11
+**\mode:=ljfour; mag:=1; nonstopmode; input csssbx15
+(/home/bobran/.texmf-var/fonts/source/public/cs/csssbx15.mf
+(/usr/share/texmf-texlive/fonts/source/public/cs/cscode.mf
+(/usr/share/texmf-texlive/fonts/source/public/cm/cmbase.mf))
+! I can't find file `cmssbx15'.
+<scantokens> input cmssbx15
+                           
+<to be read again> 
+                   ;
+use_driver->...se:scantokens("input "&param_base);
+                                                  fi.font_identifier:=substr...
+<to be read again> 
+                   ;
+l.2 use_driver;
+               
+Please type another input file name
+! Emergency stop.
+<scantokens> input cmssbx15
+                           
+<to be read again> 
+                   ;
+use_driver->...se:scantokens("input "&param_base);
+                                                  fi.font_identifier:=substr...
+<to be read again> 
+                   ;
+l.2 use_driver;
+               
+*** (job aborted, file error in nonstop mode)
+
+

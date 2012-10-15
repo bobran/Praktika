@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}                    
+\usepackage[utf8]{inputenc}         
+\usepackage{a4wide}                   
+\usepackage[dvipdfm]{graphicx}        
+\usepackage{indentfirst}   
+\usepackage{fancyhdr}                 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage[usenames]{color}
+
+\begin{document}
+\input epsf
+
+\section{Pracovní úkol}
+\begin{enumerate}
+\item Změřte tuhost aparatury $K$.
+\item Proveďte dynamickou zkoušku deformace v tlaku přiloženého vzorku.
+\item Výsledek dynamické zkoušky v tlaku graficky znázorněte a určete 
+mezní napětí $\sigma_{0,2}$ a $\sigma_{U}$. 
+\end{enumerate}
+
+
+\section{Teoretický úvod}
+
+\subsection{Deformace vzorku}
+Při působení tlakové či tahové síly na vzorek dochází k jeho deformaci. 
+Pro popis deformace je definováno skutečné napětí 
+\begin{eqnarray} 
+\nonumber \sigma^{'} = \frac{F}{S},
+\end{eqnarray}
+kde $F$ je působící síla kolmá na skutečný průřez $S$. Dále je definováno 
+smluvní napětí
+\begin{eqnarray} 
+\sigma = \frac{F}{S_0}, \label{napeti}
+\end{eqnarray}
+kde $S_0$ je průřez nedeformovaného vzorku.
+
+Dále je standardně zavedená relativní\footnote{je možné definovat také 
+skutečnou deformaci určenou vztahem $\varepsilon = \ln{\frac{l}{l_0}}$} 
+deformace
+\begin{eqnarray}
+\varepsilon_0 = \frac{l-l_0}{l_0} = \frac{\Delta l}{l_0}, \label{reldef}
+\end{eqnarray}
+kde $l$ resp. $l_0$ je rozměr deformovaného resp. nedeformovaného vzorku.
+
+Průběh deformace v závislosti na velikosti působící síly (působícího napětí) 
+probíhá pro různé materiály obecně velmi různě. Pro poměrně velké 
+množství kovových materiálů je relativní deformace $\varepsilon_0$ přímo 
+úměrná velikosti působícího napětí. Tedy až po nějaké mezní napětí lze 
+deformaci popsat Hookovým zákonem. Napětí při kterém přestane platit 
+přímá úměra se nazývá \textit{mez úměrnosti} $\sigma_{U}$. Při překročení 
+tohoto napětí deformace probíhá stále elasticky. Při překročení \textit{meze pružnosti} 
+$\sigma_E$ se deformace stává plastickou a i po uvolnění působícího napětí 
+zůstane těleso trvale zdeformováno. Velikost konečné hodnoty trvalé deformace 
+vzorku závisí na velikosti a na době po kterou napětí působí. 
+
+Pro popis trvalé deformace se zavádí napětí $\sigma_{0,2}$, zváno též \textit{mez 0,2}. 
+Je definováno jako napětí jemuž odpovídá plastická deformace o hodnotě 
+$\varepsilon_{pl} = 0,2 \, \%$. Mez 0,2 lze dle [1] určit přímo ze zatěžovacího 
+diagramu rozložením deformace na plastickou a elastickou část a nalezením 
+na křivce v zatěžovacím diagramu bod odpovídající $\varepsilon_{pl} = 0,2 \, \%$. 
+Tímto bodem $(\varepsilon_{pl} = 0,2 \, \%, \sigma = 0)$ a směrnicí danou 
+Hookovým zákonem je určena lineární funkce. Hodnotu $\sigma_{0,2}$ lze 
+pak odečíst z průsečíku výše zmiňované lineární funkce a  křivky  určené 
+naměřenými hodnotami.
+
+\section{Dynamická zkouška deformace v tlaku}
+K měření deformace v tlaku slouží měřící aparatura, která stlačuje vzorek 
+konstantní rychlostí a zaznamenává velikost působící síly a čas.
+Pokud jedna otáčka kotouče aparatury odpovídá stlačení vzorku o $0,75 \, \mathrm{mm}$
+a počet otáček normován časem má hodnoty $0,6 \cdot 10^{-3} \, s^{-1}$, pak je 
+změna délky měřeného vzorku dána vztahem
+\begin{eqnarray}
+ \Delta l = 0,75 \cdot 0,6 \cdot 10^{-3} \cdot t, \label{dlprepocet}
+\end{eqnarray}
+kde $t$ je čas, kterému vždy přísluší údal o velikosti deformace. 
+
+Během měření dochází k vlastní deformaci aparatury, tu je nutné odečíst 
+od deformace vzorku. Tedy pro výslednou deformaci platí vztah
+\begin{eqnarray}
+\Delta l_V = 0,75 \cdot 0,6 \cdot 10^{-3} \cdot t - \frac{F}{K}, \label{dlfinal}
+\end{eqnarray}
+kde $K$ je vlastní tuhost aparatury a $F$ je síla na vzorek působící.
+Pro tu platí
+\begin{eqnarray}
+F = \alpha \cdot U, \label{zUdoF}
+\end{eqnarray}
+kde U je výstupní napětí a $\alpha = 50 \, \mathrm{N/mV}$ je převodní 
+konstanta charakterizující aparaturu mezi elektrickými a mechanickými veličinami.
+
+
+\section{Měření}
+\subsection{Tuhost aparatury}
+Do aparatury jsem vložila kalibrační váleček z tuhé oceli, jehož rozměry 
+jsou značně větší než rozměry testovacích vzorků. Tedy při postupném 
+stlačováním kalibračního válečku zaznamenávám průběh deformace samotné 
+aparatury v závislosti na působící síle. Výstup z měřící aparatury 
+zajišťuje program Zapisovač jenž vypíše vždy čas měření a výstupní hodnotu
+elektrického napětí. Přepočet mezi těmito veličinami určují vztahy (\ref{dlprepocet})
+a (\ref{zUdoF}). Výslednou závislost zobrazuje obrázek \ref{kalibrace}. 
+Tuhost určená lineární regresí v lineární části grafu (nezapočítaná data z 
+počátku měření, viz obrázek \ref{kalibrace}) programem Gnuplot je
+\begin{eqnarray}
+\nonumber K= (1707 \pm 0,6) \, \mathrm{kN/m},
+\end{eqnarray}
+kde uvedená chyba je chyba lineární regrese určena programem.
+
+Poté jsem vložila do aparatury vzorek, tj. váleček o počátečních rozměrech 
+změřených mikrometrem
+\begin{eqnarray}
+\nonumber v &=& (10,20 \pm 0,01) \, \mathrm{mm},\\
+\nonumber d &=& (7,48 \pm 0,01) \, \mathrm{mm},
+\end{eqnarray}
+za chybu měřidla jsem brala nejmenší dílek stupnice (v případě mikrometru $0,01 \, \mathrm{mm}$).
+
+V případě měřeného vzorku jsem ke zpracování výstupních hodnot programu Zapisovač 
+použila vztahy (\ref{dlfinal}),(\ref{zUdoF}) a přepočtu na relativní 
+prodloužení a napětí vztahy (\ref{napeti}) a (\ref{reldef}). Výslednou 
+závislost ukazuje obrázek \ref{vzorek}. 
+Proložením lineární části grafu Hookovým zákonem dostanu modul pružnosti
+válečku v tlaku $E = (1986 \pm 9 ) \, MPa$, což je zároveň směrnice přímky 
+sloužící k určení $\sigma_{0,2}$. Dále je v grafu zaznamenána hodnota 
+meze úměrnosti $\sigma_U$ a také hodnota $\sigma_{0,2}$.
+Tedy tyto veličiny nabývají hodnot
+\begin{eqnarray}
+\nonumber \sigma_U = (5.7 \pm 0.5) \, MPa , \\
+\nonumber \sigma_{0,2} = (9.8 \pm 0.1) \, MPa ,
+\end{eqnarray}
+kde chyba u $\sigma_U$ je určena z [2] jakožto velikost chyby elektrických
+měřících přístrojů, z rozsahu měřícího přístroje a měřeného intervalu. Tato 
+chyba vychází velmi malá, proto nadhodnocuji její velikost, vzhledem k tomu, 
+že je nutné tuto hodnotu ručně odečíst z grafu.
+Nejistota $\sigma_{0,2}$ je zatížena jak chybou určení průměru $d$ vzorku, 
+ale také chybou fitu veličiny $E$. Tyto chyby jsem dle pravidel kvadratického 
+hromadění chyb sečetla.
+
+Rozměry po deformaci
+\begin{eqnarray}
+\nonumber v_d &=& (9,79 \pm 0,01) \, \mathrm{mm},\\
+\nonumber d_d &=& (7,60 \pm 0,01) \, \mathrm{mm},
+\end{eqnarray}
+
+\section{Diskuze}
+Z výsledků získaných lineární regresí při určování tuhosti aparatury, 
+tedy jejich velkou přesností, lze
+usuzovat, že se aparatura chová elasticky a nedochází k její trvalé deformaci.
+Téměř v celém průběhu je deformace přímo úměrná působící síle.
+Odchylka od lineární závislosti na začátku může být způsobena nerovnostmi
+kalibračního vzorku. Odchylka ke konci měření může indikovat nelineární deformaci 
+aparatury popřípadě kalibračního vzorku. Pro lineární regresi byla použita 
+pouze ta data, která nejeví odchylku od lineární závislosti.
+
+Při vlastním měření vzorku je na obrázku \ref{vzorek} vidět, že nejprve je relativní 
+deformace přímo úměrná působící síle, ale s jinou směrnicí než následný úsek.
+To může být způsobeno povrchovými nerovnostmi vzorku, které se po jisté 
+době působení síly odstraní. Popřípadě počáteční různoběžností podstav válečku.
+Dále je závislost lineární a splňuje Hookův 
+zákon. Po překročení $\sigma_U$ (viz obrázek \ref{vzorek} je pozorovatelná 
+nelineární elastická deformace a následně trvalá deformace plastická.
+
+Určení meze pružnosti $\sigma_U$ je zatíženo velkou chybou, jedná se spíše o odhad. 
+Pro přesnější určení této hodnoty by bylo třeba měření provést pro větší množství
+válečků a lépe vyhodnotit zátěžový diagram daného materiálu.
+Určení hodnoty $\sigma_{0,2}$ je naopak mnohem přesnější. Modul pružnosti 
+v tahu je určen poměrně přesně a totéž platí o průměru válečku.
+
+Z konečných rozměrů vzorku se potvrdilo, že došlo k trvalé plastické deformaci.
+Na zdeformovaném vzorku je okem pozorovatelná nerovnoměrnost, tedy vzorek 
+se nedeformoval v celém objemu rovnoměrně, což vnáší do měření další nepřesnost.
+
+
+\section{Závěr}
+Změřila jsem tuhost aparatury 
+\begin{eqnarray}
+\nonumber K= (1707 \pm 0,6) \, \mathrm{kN/m},
+\end{eqnarray}
+naměřená data s proloženou lineární závislost jsou na obrázku \ref{kalibrace}.
+
+Dále jsem provedla dynamickou zkoušku deformace testovacího vzorku,
+kde výsledné jsou zobrazeny na obrázku \ref{vzorek} a \ref{detail}.
+Z těchto grafů jsem odečetla mez úměrnosti $\sigma_U$ a mez 0,2,
+\begin{eqnarray}
+\nonumber \sigma_U = (5.7 \pm 0.4) \, MPa , \\
+\nonumber \sigma_{0,2} = (9.8 \pm 0.1) \, MPa.
+\end{eqnarray}
+
+
+\begin{thebibliography}{99}
+\bibitem{stud_text} Studijní text - http://physics.mff.cuni.cz/vyuka/zfp/111.htm, Dynamická zkouška deformace látek v tlaku, 11.3 2011
+\bibitem{ciz} Čížek, J. - Úvod do praktické fyziky, http://physics.mff.cuni.cz/kfnt/, 27.2 2011
+\end{thebibliography}
+
+\begin{figure}[!htb]
+\input{kalibracefp.tex}
+\caption{Kalibrace měřící aparatury}
+\label{kalibrace}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\input{detailp.tex}
+\caption{Deformace vzorku v měřící aparatuře}
+\label{vzorek}
+\end{figure}
+
+\begin{figure}[!htb]
+\input{detailopr.tex}
+\caption{Detail deformace vzorku v měřící aparatuře}
+\label{detail}
+\end{figure}
+
+\end{document}

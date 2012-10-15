@@ -1,0 +1,284 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+\section{Úkol}
+\noindent
+\begin{enumerate}
+    \item Pomocí osciloskopu změřte špičkovou hodnotu napětí na sekundáru převodního transformátoru a porovnejte ji s hodnotou naměřenou voltmetrem.
+    \item Podle vlastní volby sledujte činnost jednocestného nebo dvoucestného usměrňovače s křemíkovými diodami KY711
+    \begin{enumerate}
+        \item při maximální hodnotě zatěžovacího odporu 10 k$\Omega$ sledujte závislost stejnosměrného napětí na filtrační kapacitě $C$ v intervalu 0 – 10 $\mu$F. Hodnotu usměrněného napětí při $C = 10 \mu$F srovnejte se špičkovou hodnotou pulzního průběhu
+        \item změřte závislost filtrační kapacity $C$, potřebné k tomu, aby střídavá složka usměrněného napětí tvořila 10\% špičkové hodnoty (tj. asi 1 V), na odebíraném proudu. U jednocestného usměrňovače měřte do proudu 0,6 mA, u dvoucestného do proudu 1 mA.
+        \item naměřené závislosti zpracujte graficky. Do grafu uvádějícího závislost filtrační kapacity $C$ na proudu vyneste také závislost časové konstanty $\tau = R_zC$ na proudu. 
+    \end{enumerate}
+    \item Charakteristiku vakuové diody EZ81 a Zenerovy diody KZ703 zobrazte na osciloskopu podle schématu připojeného k úloze. Orientačně načrtněte pozorované charakteristiky a vyznačte měřítka na osách. Odhadněte napětí na diodách při proudu 20 mA v propustném směru. Určete Zenerovo napětí. 
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Efektivní hodnota}
+Efektivní hodnota veličiny $A$ je dána vztahem
+\begin{eqnarray}
+A_e=\frac{1}{T}\int_0^TA(t)\mbox(d)t.
+\end{eqnarray}
+Pro periodicé veličiny, jako třeba napětí střídavého proudu, by tato hodnota byla nulová, proto pro její charakteristiku užívá
+\begin{eqnarray}
+U_e^2=\frac{1}{T}\int_0^Tu^2(t)\mbox{d}t,
+\end{eqnarray}
+což je pro speciálně pro sinový průběh
+\begin{eqnarray}
+U_e=\frac{U_0}{\sqrt{2}}.
+\label{U_e}
+\end{eqnarray}
+Přesně tuto hodnotu nám ukazuje běžný voltmetr. Analogický vztah platí pro střídavý proud.
+
+\begin{figure}
+\includegraphics[width=6in]{sch1.eps}
+\caption{Schéma zapojení Graetzova můstku.}
+\label{sch1}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=6in]{sch2.eps}
+\caption{Schéma pro měření usměrněného rpoudu s filtrční kapacitou.}
+\label{sch2}
+\end{figure}
+
+
+\subsection{Graetzův můstek}
+Na obrázku (\ref{sch1}) je Graetzův můstek, který se používá jako dvoucestný uměrňovač. Jeho princip je popsán v \cite{text}. 
+Pro efektivní hodnotu napětí při tomto zapojení platí
+\begin{eqnarray}
+U_e=\frac{2}{\pi}U_0.
+\label{U_e2}
+\end{eqnarray}
+
+\subsection{Filtrace napětí}
+Při zapojení dle obrázku (\ref{sch2}) dochází k filtraci napětí. V závislosti na velikosti $C$ a $R_z$ se bude měnit prlběh napětí přibližně dle vztahu
+\begin{eqnarray}
+u=U_0\left(1-\frac{t}{R_zC}\right).
+\end{eqnarray}
+Velikost filtrace je popsána veličinou činitel filtrace $k_f$, která je definována vztahem
+\begin{eqnarray}
+k_f=\frac{U_0}{\Delta U},
+\end{eqnarray}
+kde $\Delta U$ je špičková hodnota střídavé složky napětí.
+
+V \cite{text} je dále odvozen vztah pro velikost filtrační kapacity
+\begin{eqnarray}
+C=Tk_fI\cdot(nU_0)^{-1},
+\end{eqnarray}
+kde $n$ je pro případ dvoucestného usměrnění roven dvěma.
+
+\section{Měření}
+
+\subsection{Špičkové napětí}
+Nejprve jsem změřil efektivní hodnotu napětí v sekundárním obvodu, která byla 
+\begin{eqnarray}
+U_e=(6.97 \pm 0.04)\mbox{V}, 
+\end{eqnarray}
+čemuž by u čistě sinusového proudu odpovídala velikost špičkového napětí 
+\begin{eqnarray}
+U_0=(9.86 \pm 0.06)\mbox{V}. 
+\end{eqnarray}
+Na osciloskopu jsem však naměřil hodnotu 
+\begin{eqnarray}
+U_0=(10.0\pm0.2)\mbox{V}.
+\end{eqnarray}
+
+\subsection{Závislost stejnosměrné složky napětí}
+Zvolil jsem si dvoucestné uměrnění a sestavil zapojení dle obrázku (\ref{sch2}). Proměřil jsem 
+velikost stejnosměrného napětí na velikosti filtrační kapacity při konstantním 
+odporu 10 k$\Omega$. Naměřené hodnoty jsou v tabulce \ref{TUe} a výsledná závislost 
+je na obrázku (\ref{g1}), kterou jsem pro názornost proložil křivkou. Pro filtrační 
+kapacitu 10 $\mu$F byl činitel filtrace
+\begin{eqnarray}
+k_f=13.43
+\end{eqnarray}
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+C/\mu\mbox{F}&  0&  0.1&   0.2&   0.3&   0.4&   0.5&   0.6&   0.7&   0.8&   0.9 \\ \hline
+U/\mbox{V}&   5.28&   5.41&   5.65&   5.91&   6.17&   6.42&   6.63&   6.78&   6.93&   7.05   \\ \hline \hline
+C/\mu\mbox{F}&  1&   2&   3&   4&   5&   6&   7&   8&   9&   10 \\ \hline
+U/\mbox{V}&   7.14&   7.66&   7.92&   8.06&   8.17&   8.20&   8.26&   8.29&   8.30&   8.33    \\ \hline
+\end{array}
+$$
+\caption{Velikost stejnosměrné složky napětí $U$ v závislosti na filtrační kapacitě $C$.}
+\label{TUe}
+\end{table}
+
+\begin{figure}[htb]
+\begin{center}
+\input{g1.tex}
+\end{center}
+\caption{Graf závislosti stejnosměrné složky napětí $U$ na velikosti filtrační kapacity $C$.}
+\label{g1}
+\end{figure}
+
+\subsection{Závislost filtrační kapacity}
+Následně jsem měřil potřebnou filtrační kapacitu pro různé proudy, aby $\Delta U=1$V. Tyto 
+hodnoty jsou i s potřebným $R_z$ uvedeny v tabulce \ref{TI} a zaneseny do obrázku (\ref{g2}) 
+spolu s závislostí časové konstanty $\tau$.
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|}
+\hline
+I/\mbox{mA}&    C/\mu\mbox{F}&  R_z/\mbox{k}\Omega \\ \hline
+0.10\pm 0.01&    0.86&  70.0\pm0.7 \\ \hline
+0.20\pm 0.01&    1.7&   38.5\pm0.4 \\ \hline
+0.30\pm 0.01&    2.4&   26.5\pm0.3 \\ \hline
+0.40\pm 0.01&    3.2&   19.8\pm0.2 \\ \hline
+0.50\pm 0.01&    4.0&   15.8\pm0.2 \\ \hline
+0.62\pm 0.01&    4.7&   13.0\pm0.1 \\ \hline
+0.68\pm 0.02&    5.1&   12.0\pm0.1 \\ \hline
+0.72\pm 0.02&    5.5&   11.2\pm0.1 \\ \hline
+0.80\pm 0.02&    6.1&   10.0\pm0.1 \\ \hline
+0.86\pm 0.02&    6.6&   9.40\pm0.09 \\ \hline
+0.90\pm 0.02&    6.8&   9.00\pm0.09 \\ \hline
+0.96\pm 0.02&    7.4&   8.40\pm0.08 \\ \hline
+1.00\pm 0.02&    7.6&   8.10\pm0.08 \\ \hline
+\end{array}
+$$
+\caption{Závislosti filtrační kapacity $C$ a odporu $R_z$ na proudu $I$.}
+\label{TI}
+\end{table}
+
+\begin{figure}
+\begin{center}
+\input{g2.tex}
+\end{center}
+\caption{Graf závislosti filtrační kapacity $C$ a časové konstanty $\tau$ na proudu $I$.}
+\label{g2}
+\end{figure}
+
+\subsection{Dioda}
+Za pomoci osciloskopu proměřil VA charakteristiku diody. Klíčové body jsou v tabulce 
+\ref{TDioda} a výsledná charakteristika je na obrázku (\ref{g3}). Nebylo možné stanovit přesnou 
+chybu měření, protože na osciloskopu vznikaly dvě křivky a i při postupu po bodech byla špička 
+křivky těžko určitelná. Při proudu 20 mA by mělo na diodě být napětí asi 60.6 V.
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+U/\mbox{V}& I/\mbox{mA} \\ \hline
+<-0.6&  0 \\ \hline
+0&  1 \\ \hline
+0.4&    2 \\ \hline
+0.8&    3 \\ \hline
+1.8&    6 \\ \hline
+\end{array}
+$$
+\caption{Klíčové hodnoty VA charakteristiky diody}
+\label{TDioda}
+\end{table}
+
+\begin{figure}
+\begin{center}
+\input{g3.tex}
+\end{center}
+\caption{VA charakteristika diody}
+\label{g3}
+\end{figure}
+
+\subsection{Zenerova dioda}
+Stejný postup jako u diody jsem zvolil u Zenerovy diody. Klíčové body jsou v tabulce \ref{TZener} 
+a výsledná charakteristika na obrázku (\ref{g4}). Při proudu 20 mA bylo na Zenerově diodě přibližně 0.64 V a Zenerovo napětí je přibližně -6.2 V.
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+U/\mbox{V}& I/\mbox{mA} \\ \hline
+-6.6&  -15 \\ \hline
+-6.5&  -10 \\ \hline
+-6.4&    -5 \\ \hline
+-6.2&    0 \\ \hline
+0.4&    0 \\ \hline
+0.64&    20 \\ \hline
+0.66&    40 \\ \hline
+0.68&    60 \\ \hline
+\end{array}
+$$
+\caption{Klíčové hodnoty VA charakteristiky Zenerovy diody}
+\label{TZener}
+\end{table}
+
+\begin{figure}
+\begin{center}
+\input{g4.tex}
+\end{center}
+\caption{VA charakteristika Zenerovy diody}
+\label{g4}
+\end{figure}
+
+\section{Diskuze}
+
+Proud v sekundárním obvodu nemá čistě sinuový charakter. To bylo nejlépe vidět na jeho prlběhu 
+zobrazeném na osciloskopu. Z toho důvodu efektivní a špičová hodnota napětí nesplňuje zcela 
+přesně vztah \ref{U_e}.
+
+Závislost stejnosměrné složky napětí na filtrační kapacitě jasně splňujě exponenciální závslost. 
+Při maximální filtrační kapacitě byl činitel filtrace vysoký a výsledný proud již měl témeř 
+stejnosměrný charakter.
+
+Závislost filtrační kapacity na proudu v sekundárním obvodu vyšla dle předpokladu lineární, a to 
+dokonce s velmi malou chybou fitu. Závislost časové konstanty již měla jistou odchylku u nižších 
+hodnot proudum která byla zřejmě způsobena vyšší chybou na odporové dekádě.
+
+Charakteristiky diod jsou podle mého jen přibližné, ač vystihují charakter těchto součástek. 
+Naměřené hodnoty totiž mají značnou chybu způsobenou rozdvojením křivky na oscilskopu. 
+
+\section{Závěr}
+\noindent
+Za pomoci osciloskopu jsem stanovil hodnotu špičkového napětí v sekundárním obvodu
+\begin{eqnarray}
+U=(10.0\pm0.2)\mbox{V}
+\end{eqnarray}
+a porovnal jí s hodnotou odpovídající výpočtu z voltmetru, která byla
+\begin{eqnarray}
+U=(9.86\pm0.06)\mbox{V}.
+\end{eqnarray}
+Proměřil jsem závislost stejnosměré složky proudu na filtrační kapacitě pro proud uměrnění za 
+pomoci Graetzova můstku. Naměřené hodnoty jsou v tabulce \ref{TUe} a závislost na obrázku 
+\ref{g1}. Hodnotu špičkového napětí jsem porovnou s hodnotou pulzního průběhu. Výsledný činitel 
+filtrace byl
+\begin{eqnarray}
+k_f=13.43
+\end{eqnarray}
+Proměřil jsem závislost filtrační kapacity na proudu. Výsledky jsou v tabulce \ref{TI}. Závislost 
+je zobrazena na obrázku \ref{g2} spolu se závislostí časové konstanty $\tau$. \\
+Proměřil jsem charakteristiku diody respektive Zenerovy diody. Výsledná VA charakteristika je 
+na ovrázku \ref{g3} respektive \ref{g4}.\\
+Stanovil jsem hodnoty napětí na diodách při proudu 20 mA
+\begin{eqnarray}
+U&=&60.6 \mbox{V} ,\mbox{resp.} \\
+U&=&0.64 \mbox{V}.
+\end{eqnarray}
+Stanovil jsem hodnotu Zenerova napětí na
+\begin{eqnarray}
+U_z=-6.2\mbox{V}
+\end{eqnarray}
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum II} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_205.htm (3. 11. 2011)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+\end{thebibliography}
+\end{document}

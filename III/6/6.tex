@@ -1,0 +1,259 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+
+\section{Úkol}
+\begin{enumerate}
+\item Ze změřeného ohybového obrazce zobrazeného na milimetrovém papíru určete mřížkovou konstantu mřížky.
+\item Pomocí aparatury proměřte ohybové obrazce: mřížky, 2 vybraných štěrbin, 2 vybraných dvojštěrbin. Zpracováním měření určete parametry použitých difrakčních prvků.
+\item Okalibrujte mikroskopový okulár metodou postupných měření a lineární regresí, odhadněte relativní chybu kalibrace.
+\item Mikroskopem změřte parametry všech použitých difrakčních prvků.
+\item Výsledky měření v úkolech č.1, č.2 a č.4 srovnejte a diskutujte, v kterém případě jsou spočtené parametry zatíženy nejmenší chybou. 
+\end{enumerate}
+
+\section{Teorie}
+\subsection{Oprická mřížka}
+Optická mřížka je optická součástka sloužící k ohybu světla. Tento ohyb je svázán rovnicí
+\begin{eqnarray}
+\sin\varphi=\frac{k\lambda}{a},
+\end{eqnarray}
+kde $\varphi$ je úhel pod kterým vychází kolmo dopadající paprsek, $k$ přiroené číslo a $a$ vzálenost mezi vrypy na mřížce. 
+Mřížková konstanta se definuje jako převrácená hodnota $a$.
+
+\subsection{Štěrbina a dvojstěrbina}
+Dle \cite{maly} dochází na stětbinách také k ohybu. Vlivem drahových rozdílů následně vzniká na stínítku interferenční obrazec. 
+Pro štěrbinu platí
+\begin{eqnarray}
+I=I_0\frac{\sin^2(\frac{\pi b}{\lambda}\sin\varphi)}{(\frac{\pi b}{\lambda}\sin\varphi)^2},
+\label{St}
+\end{eqnarray}
+kde $I_0$ je maximum, které nastává pro úhel $\varphi = 0$, $b$ je šířka stěrbiny.
+
+Pro dvojštěrbinu výraz podobný
+\begin{eqnarray}
+I=I_0\frac{\sin^2(\frac{\pi b}{\lambda}\varphi)}{(\frac{\pi b}{\lambda}\varphi)^2}\cos^2\left(\frac{\pi a}{\lambda}\varphi\right),
+\label{DSt}
+\end{eqnarray}
+kde $a$ je vzdálenost středů stěrbin.
+
+\section{Měření}
+\subsection{Mřížková konstanta}
+Po nastavení stínítka do ohniska čočky v aparatuře (f = 1 m) jsem na milimetrový papír zanesl ohybový obrazec vzniklý ze mnou požité mřížky. 
+Odečtené hodnoty jsou vzhledem k bodu nultého řádu v tabulce \ref{TU1} včetně dopočteného průberu a odpovídající mřížkové konstantě ($\lambda = 632.8$ nm).
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+k&  x_{k1}/\mbox{mm}&  -x_{k2}/\mbox{mm}&   x_k/\mbox{mm}& a^{-1}/\mbox{mm}^{-1}  \\ \hline
+1&  13.0 \pm 0.5 & 12.0 \pm 0.5&    13 \pm 1&   20\pm 2 \\ \hline
+2&  25.5  \pm 0.5  & 25.0\pm 0.5&   25\pm 1&    20\pm 2 \\ \hline
+3&  38.0 \pm 0.5&    37.0\pm 0.5&   38\pm 1&    20\pm 2 \\ \hline
+4&  50.5 \pm 0.5&  49.0\pm 0.5& 50\pm 1&    20\pm 2 \\ \hline
+5&  63.0 \pm 0.5&  62.0\pm 0.5& 63\pm 1&    20\pm 2 \\ \hline
+6&  75.0 \pm 0.5&  75.0\pm 0.5& 75\pm 1&    20\pm 2 \\ \hline
+7&  88.0 \pm 0.5&  87.0\pm 0.5& 88\pm 1&    20\pm 2 \\ \hline
+8&  100.0 \pm 0.5& 100.0\pm 0.5&    100\pm 1&   20\pm 2 \\ \hline
+9&  103.0 \pm 0.5& 103.0\pm 0.5&    103\pm 1&   18\pm 2 \\ \hline
+10& 116.0\pm 0.5&  115.0\pm 0.5&    116\pm 1&   18\pm 2 \\ \hline
+\end{array}
+$$
+\caption{Výsledky měření mřížky s pomocí milimetrového papíru.}
+\label{TU1}
+\end{table}
+
+Po statistickém vyhodnocení a vypuštěním dvou posledních naměřených hodnot (z důvodu vyšší nepřesnosti při odečítání) jsem získal mřížkovou konstantu
+\begin{eqnarray}
+a^{-1}=(20\pm 1)\mbox{mm}^{-1}
+\end{eqnarray}
+Dominantní složka chyby byla nepřesnost milimetrového papíru.
+
+Dále jsem k měření použil čidla, které jsem opět umístil do ohniska použité čočky. Data byla zanamenávána za pomoci počítače. Výsledný graf je na obrázku \ref{g1}. 
+Z něj jsem za pomoci programu gnuplot odečetl maximální hodnoty a opět vyhodnotil mřížkovou konstantu. V tomto případě mi vyšlo
+\begin{eqnarray}
+a^{-1}=(19.24 \pm 0.02)\mbox{mm}^{-1}
+\end{eqnarray}
+Dle šířky píků jsem chybu odhadl na 0.1 \%.
+
+\subsection{Stěrbina}
+Čidlo jsem dále použil pro měření dvou štěrbin různé šířky. Výsledky jsou na obrázku 
+\ref{g2} a \ref{g3}. Na naměřené hodnoty jsem nafitoval křivky odpovídající předpisům z rovnic \ref{St} a \ref{DSt}. Z toho jsem získal parametry štěrbin. Grafy jsou také posunuty, aby bylo maximum v bodě nula. Konkrétně rozměr štěrbin A a C
+\begin{eqnarray}
+b_{StA}&=&(0.1227 \pm 0.0001) \mbox{mm}\\
+b_{StC}&=&(0.4514 \pm 0.0008) \mbox{mm}
+\end{eqnarray}
+Pro dvojštěrbiby vyšlo
+\begin{eqnarray}
+b_{DStA}&=&(0.1183 \pm 0.0006) \mbox{mm}\\
+a_{DStA}&=&(0.6106 \pm 0.0005) \mbox{mm}\\
+b_{DStC}&=&(0.2015 \pm 0.0002) \mbox{mm}\\
+a_{DStC}&=&(1.2049 \pm 0.0003) \mbox{mm}
+\end{eqnarray}
+
+\subsection{Mikroskop}
+Pro měření za pomoci mikroskopu se nejdříve musela provést jeho kalibrace. K tomu jsem 
+použil přiloženou stupnici a odpovídající hodnoty odečtené na mikroskopu jsou v tabulce 
+\ref{TMik}. Z nich jsem sestavil kalibrační křivku \ref{kal}, z které jsem stanovil velikost jednoho dílku mikroskopu
+\begin{eqnarray}
+d_mik=(0.1652\pm0.0005) \mbox{mm}
+\end{eqnarray}
+a následně naměřil rozměry zkoumaných předmětů \ref{TMH}.
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+x/\mbox{mm}& x/\mbox{d. mik.} \\ \hline
+0.0&    0.48 \\ \hline
+0.1&    1.08 \\ \hline
+0.2&    1.78 \\ \hline
+0.3&    2.38 \\ \hline
+0.4&    2.98 \\ \hline
+0.5&    3.59 \\ \hline
+0.6&    4.15 \\ \hline
+0.7&    4.79 \\ \hline
+0.8&    5.37 \\ \hline
+0.9&    5.98 \\ \hline
+1.0&    6.60 \\ \hline
+1.1&    7.17 \\ \hline
+1.2&    7.78 \\ \hline
+1.3&    8.38 \\ \hline
+1.4&    9.00 \\ \hline
+1.5&    9.62 \\ \hline
+\end{array}
+$$
+\caption{Hodnoty z kalibrace mikroskopu}
+\label{TMik}
+\end{table}
+
+\begin{table}
+$$
+\begin{array}{|l|c|c|}
+\hline
+&   x/\mbox{d. mik.}&   x/\mbox{mm} \\ \hline
+a_{mriz}&   0.335&  0.0553 \pm 0.0002  \\ \hline
+b_{StA}&    0.77&   0.127 \pm 0.001 \\ \hline
+b_{StC}&    2.85&   0.471 \pm 0.001 \\ \hline
+b_{DStA}&   0.76&   0.126 \pm 0.001 \\ \hline
+a_{DStA}&   3.71&   0.613 \pm 0.001 \\ \hline
+b_{DStC}&   1.30&   0.215 \pm 0.001 \\ \hline
+a_{DStC}&   7.35&   1.214 \pm 0.001 \\ \hline
+\end{array}
+$$
+\caption{Hodnoty naměřené mikroskopek}
+\label{TMH}
+\end{table}
+
+\section{Dikuze}
+Měření za pomoci milimetrového papíru se ukázalo být vcelku přesné pro stanovení 
+přibližné hodnoty. Jeho chyba se však od ostatních metod lišila o celý řád. Jako 
+nejpřesnější hodnotím interferenční jevy. Fitování na naměřené hodnoty sice bylo často 
+zdlouhavé a zejména u dvoujštěrbiny C jsem narazil na problém s rozpoznávací schopností 
+čidla. Relativní chyba je však nejmenší. U mikroskopu navíc není zcela přesně započítána 
+chyba způsobená nepřesností kalibrační stupnice. Největším problémem při fitování 
+za pomoci programu gnuplot byla potřeba přibližných hodnot, kolem kterých se má 
+fitovat, k čemuž jsem samozřejmě použil hodnoty z měření mikroskopem. Bez těchto hodnot 
+by bylo celé fitování téměř nemožné.
+
+
+\section{Závěr}
+Změřil jsem mřížkovou konstantu ohybové mřížky třemi metodami. Hodnoty jsou v pořadí milimetrový papír, čidlo, mikroskop.
+\begin{eqnarray}
+a^{-1}&=&(20\pm 1)\mbox{mm}^{-1} \\
+a^{-1}&=&(19.24 \pm 0.02)\mbox{mm}^{-1} \\
+a^{-1}&=&(18.03 \pm 0.07)\mbox{mm}^{-1}
+\end{eqnarray}
+Změřil jsem rozměry dvou různých štěrbin a to v pořadí za pomoci čidla a mikroskopem.
+\begin{eqnarray}
+b_{StA}&=&(0.1227 \pm 0.0001) \mbox{mm}\\
+b_{StC}&=&(0.4514 \pm 0.0008) \mbox{mm}\\
+b_{StA}&=&(0.127 \pm 0.001) \mbox{mm}\\
+b_{StC}&=&(0.471 \pm 0.001) \mbox{mm}
+\end{eqnarray}
+Změřil jsem rozměry dvou různých dvojštěrbin opět dvěmi metodami.
+\begin{eqnarray}
+b_{DStA}&=&(0.1183 \pm 0.0006) \mbox{mm}\\
+a_{DStA}&=&(0.6106 \pm 0.0005) \mbox{mm}\\
+b_{DStC}&=&(0.2015 \pm 0.0002) \mbox{mm}\\
+a_{DStC}&=&(1.2049 \pm 0.0003) \mbox{mm}\\
+b_{DStA}&=&(0.126 \pm 0.001) \mbox{mm}\\
+a_{DStA}&=&(0.613 \pm 0.001) \mbox{mm}\\
+b_{DStC}&=&(0.215 \pm 0.001) \mbox{mm}\\
+a_{DStC}&=&(1.214 \pm 0.001) \mbox{mm}
+\end{eqnarray}
+Nakalibroval jsem mikroskop. Kalibrační křivka je na obrázku \ref{kal}.
+
+\begin{figure}
+\begin{center}
+\input{g1.tex}
+\end{center}
+\caption{Ohybový obrzec mřížky}
+\label{g1}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\input{g2.tex}
+\end{center}
+\caption{Graf relativní intenzity na stínítku v závislosti na poloze pro štěrbinu A.}
+\label{g2}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\input{g3.tex}
+\end{center}
+\caption{Graf relativní intenzity na stínítku v závislosti na poloze pro štěrbinu C.}
+\label{g3}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\input{g4.tex}
+\end{center}
+\caption{Graf relativní intenzity na stínítku v závislosti na poloze pro dvojštěrbinu A.}
+\label{g4}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\input{g5.tex}
+\end{center}
+\caption{Graf relativní intenzity na stínítku v závislosti na poloze pro dvojštěrbinu C.}
+\label{g5}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\input{kal.tex}
+\end{center}
+\caption{Kalibrační křivka mikroskopu.}
+\label{kal}
+\end{figure}
+
+
+\eject
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum III} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_306.htm (8. 3. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+    \bibitem{maly} \emph{prof. RNDr. Petr Malý , DrSc.}: \textbf{Optika}\\Univerzita Karlova v Praze, Nakladatelství Karolinum 2008, první vydání
+\end{thebibliography}
+
+
+
+\end{document}

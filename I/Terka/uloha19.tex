@@ -1,0 +1,359 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}                    
+\usepackage[utf8]{inputenc}         
+\usepackage{a4wide}                   
+\usepackage[dvipdfm]{graphicx}        
+\usepackage{indentfirst}   
+\usepackage{fancyhdr}                 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage[usenames]{color}
+
+\begin{document}
+\input epsf
+
+\section{Pracovní úkol}
+\begin{enumerate}
+\item Změřte dynamickou viskozitu parafinového oleje Stokesovou metodou.
+\item Změřte dynamickou viskozitu ricinového oleje Stokesovou metodou.
+\item Ověřte, zda jsou pro dané experimentální uspořádání splněny podmínky platnosti Stokesova vzorce pro odpor prostředí při pohybu koule.
+\item Hustotu skleněných kuliček určete pyknometrickou metodou. 
+\end{enumerate}
+
+\section{Teoretický úvod}
+
+\subsection{Stokesova metoda měření viskozity}
+Na pohybující se se těleso v tíhovém poli působí obecně tři síly - tíhová 
+síla určena vztahem $G = m g$ (standardně $m$ je hmotnost tělesa, $g$ je tíhové zrychlení),
+vztlaková síla a odporová síla. Vztlaková síla má dle Archimedova zákona 
+tvar $Fvz = V \varrho g$, kde $V$ je objem tělesa a $\varrho$ je hustota tekutiny.
+Pokud se jedná o pohyb kulově symetrického tělesa a jsou splněny podmínky 
+laminárního obtékání popisuje odporovou sílu Stokesův vztah
+\begin{eqnarray}
+F = 6\pi \eta r v \, , \label{stokes}
+\end{eqnarray}
+kde $\eta$ je dynamická viskozita kapaliny, $r$ je poloměr tělesa, $v$ je 
+jeho rychlost. Kromě laminarity proudění jsou zde předpokládány neomezené 
+rozměry prostředí v němž se kulička pohybuje.
+
+Kriterium laminarity proudění je určeno Reynoldsovým číslem $Re$, které je 
+definováno 
+\begin{eqnarray}
+Re = \frac{2r\varrho v}{\eta}\, , \label{reynolds}
+\end{eqnarray}
+kde $\varrho$ je hustota tekutiny. Pokud je $Re << 1$ jedná se dle [1] o  
+laminární proudění. 
+
+Pokud se tedy jedná o pád kuliček ve válcové nádobě splňující podmínku 
+laminárního proudění je viskozita tekutiny v ní dle [1] určena 
+\begin{eqnarray}
+\eta = \frac{2r^2(\varrho_k - \varrho)g}{9v\left(1-\frac{2,4r}{R}\right)} \, , \label{viskozita}
+\end{eqnarray}
+kde $\varrho_K$ je hustota kuliček, $R$ je poloměr válcové nádoby a $\varrho_k$ je husota kuliček..
+
+\subsection{Pyknometrická metoda pro určení hustoty pevných látek}
+Pro určení hustoty malých objektů určíme jejich hmotnost $m_1$ na vzduchu. 
+Poté určíme hmotnost $m_2$ celého pyknometru naplněného kapalinou o hustotě 
+$\varrho_z$. Nakonec určíme hmotnost $m_3$ tak, že do pyknometru naplněného 
+vodou nasypeme objekty o hmotnosti $m_1$. Pak je tedy výsledná hustota tělísek 
+$\varrho_k$ dle [5]
+\begin{eqnarray}
+\varrho_k = \frac{m_1}{m_1+m_2-m_3}(\varrho_z-\varrho_{vzduch})+\varrho_{vzduch} \, , \label{pyknometr}
+\end{eqnarray}
+kde $\varrho_{vzduch}$ je hustota vzduchu.
+
+
+\section{Měření}
+
+\subsection{Parametry kuliček}
+
+
+%%Pro několik prvních kuliček (velkých i malých), 
+%%jsem provedla více měření. U těchto hodnot jsem dle [2] provedla statistické zpracování 
+%%a určila chybu dle [2]. Z časových důvodů jsem takové množství měření nemohla provést pro 
+%%více kuliček. Proto s jistou ztrátou přesnosti budu jako další chybu brát chybu průměrnou.
+Kuličky jsou dvou typů - velké a malé. Od každého typu jsem si vybrala 
+10 kuliček. Pro ty jsem určila průměr pomocí dilenského mikroskopu. Naměřené hodnoty 
+jsou v tabulce 2 (je zde uvedeno pouze 7 kuliček velkých - ostatní nebyly využity). 
+Pro první tři velké kuličky a první dvě malé kuličky 
+jsem provedla vždy po pěti měření (tabulka 1) a dle [2] jsem určila směrodatné odchylky, které jsem 
+kvadraticky sečetla s polovinou nejmenšího dílku přístroje, tj $0,005 \, \mathrm{mm}$ . Pro ostatní 
+kuličky jsem z časových důvodů tolik měření nemohla provést, proto jako chybu 
+určení průměru ostatních kuliček beru aritmetický průměr statisticky určených chyb. Kuličky jsem si odkládala do číslovaných boxů. 
+V dalším měření, jsem pak mohla rozlišovat jednotlivé velikosti kuliček.
+
+Hustotu kuliček jsem určila pyknometrickou metodou. Tedy za předpokladu 
+konstatní hustoty měřeného materiálu jsem vybrala soubor kuliček s nímž jsem 
+pak prováděla měření nezávisle na číslovaných kuličkách. Naměřené hodnoty 
+jsou v tabulce 7. Chyby jsou spočteny dle kvadratického 
+hromadění chyb. Chyby jednotlivých hmotností jsem brala jako 
+velikost předposledního digitu na měřících vahách, tedy $0,001 \, \mathrm{g}$.
+Váhy mi na posledním desetinném místě i po doporučeném čase $3 \, \mathrm{s}$
+přišly nestabilní.
+
+Hustotu $\varrho_z$ destilované vody jsem odečetla z přítomné tabulky po 
+určení teploty $t_z =(23,0 \pm 0,1)^{\circ}\mathrm{C}$ jako $\varrho = 997,3 \, \mathrm{kg \cdot m^{-3}}$.
+
+Dále jsem určila atmosferický tlak $p_A = (987,0 \pm 2) \, \mathrm{hPa}$ a 
+teplotu vzduchu $t_v =(24,8 \pm 0,4)^{\circ}\mathrm{C}$. Tyto chyby byly 
+odečteny z dokumentace měřících přístrojů. Na základě těchto hodnot určím 
+z [2] pomocí stavové rovnice hustotu vzduchu $\varrho_{vzduch} = (1,15 \pm 0,02) \, \mathrm{kg \cdot m^{-3}}$, 
+kde pro určení chyb jsem kvadraticky sečetla relativní chyby teploty a tlaku.
+Dosazením do (\ref{pyknometr}) pro hustoty kuliček dostanu\footnote{index $v$ načí velké kuličky, index $m$ značí malé kuličky}
+\begin{eqnarray}
+\nonumber \varrho_{k}^{V} &=& (2506 \pm 40) \, \mathrm{kg \cdot m^{-3}}, \\
+\nonumber \varrho_{k}^{M} &=& (2469 \pm 53) \, \mathrm{kg \cdot m^{-3}},
+\end{eqnarray}
+kde chyba těchto veličin byla určena standardními vztahy pro rozdíl resp. podíl
+relativních chyb z [2].
+
+\subsection{Měření viskozity}
+
+%%plot [0:20] 2**3*(1-exp(-x/2**2)),1**3*(1-exp(-x/1**2))
+Do odměrného válce naplněného kapalinou jsem postupně pouštěla jednotlivé 
+kuličky. Měřila jsem čas $t$, za který kulička urazila vzdálenost $l_r$ nebo 
+$l_p$ \footnote{index $r$ značí ricínový olej, index $p$ značí parafínový olej}.
+Při předpokladu, že v měřeném úseku je rychlost kuličky již maximální možná rychlost,
+kterou při daném průměru v dané kapalině může dosáhnout, určím rychlost pádu kuličky 
+ze vztahu pro rovnoměrný pohyb. Naměřené hodnoty jsou v tabulkách 3, 4, 
+5 a 6.
+
+Hustota kapalin je uvedena přímo u měřených kapalin jako $\varrho_r = 950 \, \mathrm{kg \cdot m^{-3}}$ a
+$\varrho_p = 850 \, \mathrm{kg \cdot m^{-3}}$. 
+
+Pro počáteční charakteristiku proudění v jednotlivých kapalinách jsem pomocí 
+tabulkových hodnot viskozit [3], tedy $\eta_r = (986 \cdot 10^3) \, \mathrm{kg \cdot m^{-1} s^{-1}}$, 
+$\eta_p = (101,8 \cdot 10^3) \, \mathrm{kg \cdot m^{-1} s^{-1}}$, určila hodnotu Reynoldsova 
+čísla. Pro ricinový olej se jedná vždy o proudění laminární. Pro olej parafinový 
+byla podmínka hodnoty \ref{reynolds} pro velké kuličky porušena. Proto jsem provedla 
+pouze 2 měření pro ověření teoretického výpočtu.
+
+Dosazením hodnot do vztahu \ref{viskozita} jsem určila hodnotu viskozity pro každou 
+kuličku zvlášť. Následně jsou určila jejich střední hodnotu, tedy 
+\begin{eqnarray}
+\nonumber \eta_{r}^{V} &=& (832 \pm 37 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{r}^{M} &=& (732 \pm 52 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{p}^{V} &=& (46 \pm 4 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{p}^{V} &=& (61 \pm 4 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},
+\end{eqnarray}
+kde chyby byly určeny postupem z [2] a [4] pomocí kvadratického sčítání relativních chyb a statistického 
+zpracování souboru hodnot. Chybu určení času jsem na stopkách s přesností $0,01 \mathrm{s}$ odhadla 
+i s reakční dobou na $0,1 \mathrm{s}$.
+
+\section{Diskuze}
+\subsection{Parametry kuliček}
+Při měření hustoty kuliček pyknometrem se předpokládá, že hustota
+souboru je vzhledem k jejich výrobnímu postupu u všech kuliček stejná.
+Pokud by jejich hustoty takové nebyly určili bychom pouze průměrnou hustotu
+celého souboru a tím bychom vnesli chybu do celkového výsledku.
+
+U měření průměrů kuliček je vidět jejich značná různorodost. Navíc
+všechny kuličky nemají přesně kulový tvar a tedy pro ně neplatí Stokesův
+vztah. Celkový výsledek měření je na určení průměru kuliček velmi citlivý,
+proto by se přesnost zvýšila větším počtem měření pro každou kuličku.
+
+\subsection{Měření viskozity}
+Výsledné hodnoty se s hodnotami tabulkovými ([3]) neshodují ani v rámci
+určené chyby. To může být částečně způsobeno rozdílným složením měřených látek a
+částečně také teplotou. Tabulková hodnota byla udána pro $20^{\circ}\mathrm{C}$. 
+Nicméně se neshodují v rámci chyby ani určené viskozity pro jednotlivé velikosti 
+kuliček. 
+
+Rozdílná hodnota výsledků při měření parafínového oleje se vzhledem k turbulentnímu 
+charakteru proudění v případě velkých kuliček očekávala. Ale u oleje 
+ricinového se dle hodnoty \ref{reynolds} pro velké i malé kuličky  
+jednalo o laminární proudění a tedy hodnoty by se neměli příliš lišit.
+ 
+Důvodem rozdílnosti těchto hodnot by mohl být nerovnoměrný pohyb na měřeném 
+úseku. Další chybu vnáší již zmiňovaná tvarová nepravidelnost kuliček a tedy 
+neoprávněné užití Stokesova vztahu. Také vztah \ref{viskozita}, který platí 
+přesně při pádu kuličky středem válce, čehož nešlo vždy přesně docílit.
+
+\section{Závěr}
+Změřila jsem průměry kuliček dilénským mikroskopem. Naměřené hodnoty 
+zobrazují tabulky 1 a 2.
+
+Pyknometrickou metodou jsem určila hustu malých i velkých kuliček. 
+Naměřené hodnoty jsou v tabulce 7. Výsledné hodnoty 
+husotot jsou 
+\begin{eqnarray}
+\nonumber \varrho_{k}^{V} &=& (2506 \pm 40) \, \mathrm{kg \cdot m^{-3}}, \\
+\nonumber \varrho_{k}^{M} &=& (2469 \pm 53) \, \mathrm{kg \cdot m^{-3}}.
+\end{eqnarray}
+
+Dále jsem určila dynamickou viskozitu racínového a parafínového oleje pro
+obě velikosti kuliček. Tedy \footnote{Kde dolní index značí druh kapaliny (r - racínový olej, p - parafínový olej) a horní index velikost kuličky.}
+\begin{eqnarray}
+\nonumber \eta_{r}^{V} &=& (832 \pm 37 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{r}^{M} &=& (732 \pm 52 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{p}^{V} &=& (46 \pm 4 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}},\\
+\nonumber \eta_{p}^{V} &=& (61 \pm 4 ) \, \mathrm{kg \cdot mm^{-1} s^{-1}}.
+\end{eqnarray}
+Hodnoty jsou v tabulkách 4-6.
+
+\begin{thebibliography}{99}
+\bibitem{stud_text} Studijní text - Volný pád koule ve viskózní kapalině,\\ http://physics.mff.cuni.cz/vyuka/zfp/txt\_119.pdf, 13.3 2011
+\bibitem{tab} Mikulčák, J. a kol. - Matematické, fyzikální a chemické tabulky, Prometheus, Praha 2007, 1. vydání
+\bibitem{broz} Brož,J a kol. - Fyzikální a matematické tabulky, SNTL, Praha 1980
+\bibitem{ciz} Čížek, J. - Úvod do praktické fyziky, http://physics.mff.cuni.cz/kfnt/, 13.3 2011
+\bibitem{cdfg} Studijní text - Pyknometrická metoda pro určení hustoty pevných látek, \\ http://physics.mff.cuni.cz/vyuka/zfp/txt\_119\_pyknometr.pdf,13.3 2011
+\end{thebibliography}
+
+%%%%%%% TABULKY %%%%%%%%
+\begin{table}[!htb]
+	\label{prumery_malo}
+     \caption[]{Průměry kuliček u kterých bylo provedeno více měření} 
+   \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+	&	$d_{1^V} /\mathrm{mm}$&	$d_{2^V} /\mathrm{mm}$	&	$d_{3^V} /\mathrm{mm}$	&	$d_{1^M} /\mathrm{mm}$	&	$d_{1^M} /\mathrm{mm}$ \\
+\hline \hline										
+	&	2,656	&	2,585	&	2,57	&	1,465	&	1,54 \\ \cline{2-6}
+										
+	&	2,58	&	2,56	&	2,58	&	1,425	&	1,525\\ \cline{2-6}
+									
+	&	2,57	&	2,575	&	2,555	&	1,46	&	1,54\\ \cline{2-6}
+										
+	&	2,59	&	2,605	&	2,565	&	1,48	&	1,525\\ \cline{2-6}
+										
+	&	2,575	&	2,57	&	2,56	&	1,46	&	1,52\\
+\hline	\hline									
+$\overline{d} /\mathrm{mm}$	&	$2,59 \pm 0,06$	&	$2,58 \pm 0,03$	&	$2,59 \pm 0,02$	&	$1,46 \pm 0,04$	&	$1,53 \pm 0,02$\\
+\hline																					
+    \end{tabular}
+     \end{center}
+  \end{table}
+  
+\begin{table}[!htb]
+	\label{prumery}
+     \caption[]{Výsledné průměry kuliček} 
+   \begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+$d_{k^V} /\mathrm{mm}$	&	$d_{k^M} /\mathrm{mm}$\\
+\hline		\hline
+2,59	&	1,46\\
+\hline		
+2,58	&	1,53\\
+\hline		
+2,57	&	1,53\\
+\hline		
+2,57	&	1,54\\
+\hline		
+2,62	&	1,52\\
+\hline		
+2,50	&	1,57\\
+\hline		
+2,54	&	1,59\\
+\hline		
+	&	1,57\\
+\hline		
+	&	1,53\\
+\hline		
+	&	1,50\\
+	\hline
+    \end{tabular}
+     \end{center}
+  \end{table}
+  
+  \begin{table}[!htb]
+	\label{viskozitar-velke kulicky}
+     \caption[]{Určení viskozity - velké kuličky ricinový olej} 
+   \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $t_{r}^V/\mathrm{s}$	& $v_{r}^V/\mathrm{cm\cdot s^{-1}}$	&	$\eta_{r}^{V}/\mathrm{kgmm^{-1}\cdot s^{-1}}$ \\
+\hline		\hline		
+26,4	&	0,62	&	844,932\\
+\hline				
+25,85	&	0,64	&	818,026\\
+\hline				
+26,19	&	0,63	&	820,762\\
+\hline				
+26,48	&	0,62	&	832,343\\
+\hline				
+26,03	&	0,63	&	845,990\\
+\hline				
+    \end{tabular}
+     \end{center}
+  \end{table}
+  
+    \begin{table}[!htb]
+	\label{viskozitar-male kulicky}
+     \caption[]{Určení viskozity - malé kuličky ricinový olej} 
+   \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $t_{r}^M/\mathrm{s}$	& $v_{r}^M/\mathrm{cm\cdot s^{-1}}$	&	$\eta_{r}^{M}/\mathrm{kgmm^{-1}\cdot s^{-1}}$ \\
+\hline		\hline	
+  67,79	&	0,24	&	692,121\\
+\hline				
+66,9	&	0,25	&	750,529\\
+\hline				
+66,56	&	0,25	&	746,715\\
+\hline				
+66,37	&	0,25	&	749,345\\
+\hline				
+65,03	&	0,25	&	720,262\\
+\hline
+      \end{tabular}
+     \end{center}
+  \end{table}
+  
+    \begin{table}[!htb]
+	\label{viskozitap-male kulicky}
+     \caption[]{Určení viskozity - malé kuličky parafinový olej} 
+   \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $t_{p}^M/\mathrm{s}$	& $v_{p}^M/\mathrm{cm\cdot s^{-1}}$	&	$\eta_{p}^{M}/\mathrm{kgmm^{-1}\cdot s^{-1}}$ \\
+        \hline \hline
+3,05	&	5,44	&	63,448\\
+\hline				
+3,14	&	5,28	&	63,098\\
+\hline				
+3,2	&	5,18	&	60,399\\
+\hline				
+3,07	&	5,40	&	59,851\\
+\hline				
+3,16	&	5,25	&	56,298\\
+\hline				
+      \end{tabular}
+     \end{center}
+  \end{table}  
+ 
+ \begin{table}[!htb]
+	\label{viskozitap-velke kulicky}
+     \caption[]{Určení viskozity - velké kuličky parafínový olej} 
+   \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $t_{p}^V/\mathrm{s}$	& $v_{p}^V/\mathrm{cm\cdot s^{-1}}$	&	$\eta_{p}^{V}/\mathrm{kgmm^{-1}\cdot s^{-1}}$ \\
+\hline		\hline		 
+  1,32 &	12,56	&42,006\\
+  \hline
+1,58 &	10,49&	49,714\\
+\hline
+      \end{tabular}
+     \end{center}
+  \end{table}  
+   \begin{table}[!htb]
+	\label{pyknokul}
+     \caption[]{Pyknometrické určení hustoty kuliček} 
+   \begin{center}
+    \begin{tabular}{|c||c|c|}
+\hline   
+ &velké kuličky & malé kuličky\\
+ \hline \hline
+ $m_1 \mathrm{g}$ & 4,77 & 3,49 \\
+ \hline
+  $m_2 \mathrm{g}$ & 11,66& 11,41 \\
+   \hline
+   $m_3 \mathrm{g}$ & 14,54&13,50 \\
+    \hline
+    \end{tabular}  
+         \end{center}
+  \end{table} 
+\end{document}
