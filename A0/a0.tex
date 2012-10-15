@@ -1,78 +1,128 @@
-hlavička
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
 
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
 \section{Úkol}
 \begin{enumerate}
     \item Cílem studované úlohy je seznámit posluchače s vlastnostmi spekter gama záření získaných polovodičovým spektrometrem.
     Měření se provádí na spektrometru KJF s GeLi detektorem o objemu aktivní oblasti 55 cm$^3$ (průměr čela detektoru je 70 mm). 
-    Měření je prováděno se zářiči s jednoduchým spektrem gama záření: $^137$Cs (E = 661.55 keV), $^60$Co (E = 1173.27 keV) a 
-    $^24$Na (E = 1368.63 a 2754.03 keV), které jsou současně používány ke kalibraci spektrometru. K nastavení geometrue zážič-detektor 
+    Měření je prováděno se zářiči s jednoduchým spektrem gama záření: $^{137}$Cs (E = 661.55 keV), $^{60}$Co (E = 1173.27 keV) a 
+    $^{24}$Na (E = 1368.63 a 2754.03 keV), které jsou současně používány ke kalibraci spektrometru. K nastavení geometrue zážič-detektor 
     se používá jednoduchý nosič zářičů umožňující volbu různé geometrie.
+\end{enumerate}
 
 \section{Teoretický úvod}
+Gama záření je typ radiaktivního záření, které je tvořeno fotony o vysokých energiích. Je to jeden ze způsobý, kterým radiaktivní izotopy snižují svou energii. K jeho detekci se používají spektrometry např z polovodičů, ako při této úloze, kde toto záření vytrhává elektrony z mříže díky čemuž dochází ke změně el. proudu v měřícím obvodu. Mimo samotného chtěného efektu na detektoru se v naměřeném spektru projevuje spousta vedlejších efektů, které jsou podrobně pospány v \cite{text}.
 
 \section{Měření}
 \subsection{Kalibrace}
 Nejprve jsem provedli kalibraci spektrometru za pomoci Ra, jehož spektrum je dobře známo.
-Ke kalibraci jsme využili 6 bodů spektra.
+Ke kalibraci jsme využili 8 bodů spektra. Chyba se v případě píků pohybovala okolo jednoho keV. 
+V případě určování hran je však tato chyba až o řád vyšší.
+
+\begin{figure}
+\begin{center}
+\input{spect1.tex}
+\end{center}
+\caption{Naměřené spektrum Cs izotopu 137.}
+\label{spect1}
+\end{figure}
 
 \subsection{Cs}
 Dále jsme na spektrometr umístili Cs izotop 137 a pozorovali vzniklé spektrum, které je vidět na obrázku \ref{spect1}. 
-Na tomto spektru je vidět jediný dominantní pík, který odpovídá energii gama zážení Cs. Tato energie je 
-$$
-E=  \mbox{keV}.
-$$
+Na tomto spektru je vidět jediný dominantní pík, který odpovídá energii gama zážení Cs. Odpovídá energii
+\begin{eqnarray}
+E=661.66 \mbox{keV},
+\end{eqnarray}
+což zcela přesně koresponduje teoretické hodnotě.
+\begin{eqnarray}
+E_{Na}=661.66\mbox{keV}
+\end{eqnarray}
 
 Dále můžeme na spektru pozorovat projevy Comptnova rozptylu. Comptnovy hrany se nachází na energiích
-$$
-E_{h1}= \mbox{keV}
-E_{h2}= \mbox{keV}
-$$
+\begin{eqnarray}
+E_{h1}=480 \mbox{keV} \\
+E_{h2}=552 \mbox{keV}
+\end{eqnarray}
 Hrana zpětného odrazu je na energii
-$$
-E_{hz}= \mbox{keV}
-$$
+\begin{eqnarray}
+E_{hz}=195 \mbox{keV}
+\end{eqnarray}
 Dle teorie by hodnoty těchto hran měli být
-$$
-E_{th1}=477,33 \mbox{keV}
+\begin{eqnarray}
+E_{th1}=477.33 \mbox{keV} \\
 E_{th2}=554.58 \mbox{keV}
-$$
+\end{eqnarray}
 
-\subsection{sul}
+\begin{figure}
+\begin{center}
+\input{spect2.tex}
+\end{center}
+\caption{Naměřené spektrum radioaktivní soli.}
+\label{spect2}
+\end{figure}
+
+\subsection{sůl}
 Dále jsme pozorovali sůl ozařovanou neutronovým zářením. Tak v ní vznikly izotopy $^{24}$Na a radioaktivní izotop Cl.
 Tam se mimo Comptnova rozpztylu navíc projevil efekt, při kterém z dvojice fotnů vzniká pár elektron, pozitron. Píky tohoto 
 efektu jsou vyznačeny spolu s dalšímy body na obrázku \ref{spect2}. Jejich energetické hodnoty jsou
-$$
-E_{Na}=\mbox{keV}
-E_{NaSEP}=\mbox{keV}
-E_{NaDEP}=\mbox{keV}
-E_{Na2}=\mbox{keV}
-E_{Na2SEP}=\mbox{keV}
-E_{ani}=\mbox{keV}
-$$
+\begin{eqnarray}
+E_{Na}=2753.82 \mbox{keV} \\
+E_{NaSEP}=2242.77 \mbox{keV} \\
+E_{NaDEP}=1731.84 \mbox{keV} \\
+E_{Cl}=2167.28 \mbox{keV} \\
+E_{ClSEP}=1642.51 \mbox{keV} \\
+E_{Na2}=1368.50 \mbox{keV} \\
+E_{Na2SEP}=856.83 \mbox{keV} \\
+E_{ani}=510.95 \mbox{keV} \\
+E_{J}=416.88 \mbox{keV}
+\end{eqnarray}
 Pro srovnání jsou teoretické energie 
-$$
-E_{tNa}=2753.03  \mbox{keV}
-E_{tNaSEP}=2242.03  \mbox{keV}
-E_{tNaDEP}=1731.03  \mbox{keV}
-E_{tNa2}=1173.23  \mbox{keV}
-E_{tNa2SEP}=622.23  \mbox{keV}
-E_{tani}=1022  \mbox{keV}
-$$
+\begin{eqnarray}
+E_{tNa}=2754.03  \mbox{keV} \\
+E_{tNaSEP}=2243.03 \mbox{keV} \\
+E_{tNaDEP}=1732.03 \mbox{keV} \\
+E_{tNa2}=1368.23  \mbox{keV} \\
+E_{tNa2SEP}=857.23  \mbox{keV} \\
+E_{tani}=511  \mbox{keV}
+\end{eqnarray}
 Pro úplnost jsem určil i hodnoty comptnových hran
-$$
-E_{hNa}=\mbox{keV}
-E_{h2Na}=\mbox{keV}
-E_{hNa2}=\mbox{keV}
-E_{h2Na2}=\mbox{keV}
-E_{hzNa}=\mbox{keV}
-E_{hzNa2}=\mbox{keV}
-$$
+\begin{eqnarray}
+E_{hNa}=2521 \mbox{keV} \\
+E_{h2Na}=2631 \mbox{keV} \\
+E_{hNa2}=1157 \mbox{keV} \\
+E_{h2Na2}=1253 \mbox{keV}
+\end{eqnarray}
 Pro srovnání opět uvádím teoretické hodnoty
-$$
-E_{thNa}=2520.22 \mbox{keV}
-E_{th2Na}=2631.94 \mbox{keV}
-E_{thNa2}=963.46\mbox{keV}
-E_{th2Na2}=1058.06\mbox{keV}
-$$
+\begin{eqnarray}
+E_{thNa}=2520.22 \mbox{keV} \\
+E_{th2Na}=2631.94 \mbox{keV} \\
+E_{thNa2}=1152.93 \mbox{keV} \\
+E_{th2Na2}=1251.39 \mbox{keV}
+\end{eqnarray}
 
+\section{Diksuze}
+Na naměřených spektrech byli velmii dobře pozorovatelné všechny očekávané ekekty. Teoretické a tabulkové hodnoty se přesně  shodovali s naměřenými hodnotami dokonce s výrazně nižší chybou, než byla chyba fitu. Vliv pozadí byl řádově nižší než použité zářiče, takže neměli přílišný vliv na výsledky a proto ve spektrech nejsou žádné výrazné nadbytečné píky.
 
+\section{Závěr}
+Vyšetřil jsem spektra dvou různých zářičů, která jsou na obrázcích \ref{spect1} s \ref{spect2}, na kterých jsou také vyznačeny všechny významné body.
+
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum IV} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_400.pdf (9. 10. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+\end{thebibliography}
+\end{document}
