@@ -14,39 +14,80 @@
 %%\usepackage{nopageno}
 %%\usepackage{txfonts}
 \usepackage[usenames]{color}
+\renewcommand{\d}{\mbox{d}}
 
 \begin{document}
 \section{Úkol}
 \begin{enumerate}
-    \item Proveďte energetickou kalibraci \alpha-spektrometru a určete jeho rozlišení.
+    \item Proveďte energetickou kalibraci $\alpha$-spektrometru a určete jeho rozlišení.
     \item Určete absolutní aktivitu kalibračního radioizotopu $^{241}$Am.
-    \item Změřte závislost ionizační ztráty \alpha-částic ve vzduchu při normálním 
+    \item Změřte závislost ionizační ztráty $\alpha$-částic ve vzduchu při normálním 
     tlaku -d$T$/dx= $f(t)$. Srovnejte tuto závislost se závislotí získanou pomocí empirické formule 
-    pro dolet \alpha-častic ve vzduchu za normálních podmínek.
-    \item Určete energie \alpha-částic vzletujících ze vzorku obsahující izotop $^{239}$Pu a příměs 
+    pro dolet $\alpha$-častic ve vzduchu za normálních podmínek.
+    \item Určete energie $\alpha$-částic vzletujících ze vzorku obsahující izotop $^{239}$Pu a příměs 
     izotopu $^{238}$Pu a porovnejte je s tabelovými hodnotami. Stanovne relativní zastoupení izotopu 
     $^{238}$Pu ve vzorku s přesností lepší než 10 \%, jsou-li T$_{1/2}$($^{238}$Pu)=81.71 yr a 
     T$_{1/2}$($^{239}$Pu)=$24.13\cdot10^3$ yr.
 \end{enumerate}
 
 \section{Teoretický úvod}
+\subsection{$\alpha$-záření}
+$\alpha$-záření je typ radioaktivního záření, které je tovřené kladně nabytými heliovými jádry. 
+Pochází zejména z rozpadu těžkch prvků, jako je Am a Pu.
+
+\subsection{Rozlišení spektrometru}
+Rozlišení spektrometru udává jeho svhopnost rozlišit dvě různé energetické hodnoty. 
+Podrobnější informace jsou v \cite{text}. Jeho hodnota je dána vztahem
+\begin{eqnarray}
+\Gamma=2\sigma\sqrt{2\ln 2}
+\label{gamma}
+\end{eqnarray}
+
+\subsection{Aktivita}
+Aktivita zářiče je dána vztahem
+\begin{eqnarray}
+A=\frac{\d N}{\d t}.
+\end{eqnarray}
+Pokud předpokládáme, že se aktivita vzorku po celou dobu měření nemění, můžeme tento vztrah zjednodušit na
+\begin{eqnarray}
+A=\frac{\Delta A}{\Delta t}.
+\end{eqnarray}
+Tento předpoklad je dobře splněn, pokud je doba měření výrazně nižší než poločas rozpadu, což je jak u 
+Am, tak i Pu splněno dostatečně.
+
+\subsection{Braggova křivka}
+Braggova křivka je definována předpisem
+\begin{eqnarray}
+h(x)=-\frac{\d T}{\d x}
+\label{bragg}
+\end{eqnarray}
+
+\subsection{Poměr izotopů}
+Poměr izotopů zastoupených ve vzorku získáme jednoduše za pomoci upravení rozpadové rovnice
+\begin{eqnarray}
+P=\frac{X_1}{X_2}\frac{1-e^{\frac{t\ln 2}{T_{2,1/2}}}}{\frac{t\ln 2}{T_{1,1/2}}},
+\label{p}
+\end{eqnarray}
+kde $X_i$ je počet interakcí s detektorem naměřených pro určitý izotop za dobu $t$, přičem izotom 
+má poločas rozpadu $T_{i,1/2}$
+
 
 \section{Měření}
 \subsection{Kalibrace}
-Za pomoci známé energie \alpha-částic radioizotopu Am jsme provedli kalibraci spektrometru. Naměřené hosnoty jsou v prvním řádku tabulky \ref{mer}. 
+Za pomoci známé energie $\alpha$-částic radioizotopu Am jsme provedli kalibraci spektrometru. Naměřené hosnoty jsou v prvním řádku tabulky \ref{mer}. 
 Z hodnoty pološířky a vztahu \ref{gamma} jsem stanovil rozlišení spektrometru na
 \begin{eqnarray}
-\Gamma = 66.48 \mbox{keV}.
+\Gamma = 0.3 \mbox{keV}.
 \end{eqnarray}
 
 \subsection{Aktivaita vzorku}
 Plocha histogramu odpovídá počtu interakcí na detektoru za dobu měření. Naše měření trvalo 500 sekund. Detektor měl tvar kruhu o průměru 
 \begin{eqnarray}
-d=1.122 \mbox{cm}
+d=1.123\pm0.005 \mbox{cm}
 \end{eqnarray}
 a byl ve vzdálenosti
 \begin{eqnarray}
-x=3 \mbox{cm}
+x=3.0\pm0.1 \mbox{cm}
 \end{eqnarray}
 od vzorku. Vzorek považujeme za bodový a detektor můžeme aproximovat kulovou úsečí. Pro absolutní aktivitu pak získáme vztah
 \begin{eqnarray}
@@ -54,7 +95,7 @@ A=\frac{N}{t}=4\pi\frac{N_m}{\Omega_dt}=16x\frac{N_m}{d^2t},
 \end{eqnarray}
 což dá po dosazení naměřených hodnot
 \begin{eqnarray}
-A=367045 \mbox{s}^{-1}
+A=367000\pm1000 \mbox{s}^{-1}
 \end{eqnarray}
 
 \subsection{Závislost ionizačních ztrát}
@@ -65,7 +106,7 @@ jsou v tabulce \ref{mer}
 $$
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
-p/\mbox{ATM}&E\mbox{keV}&\mbox{FHHM}&S&\mbox{backg}&\mbox{NET C/S}& \mbox{ERR}\\ \hline
+p/\mbox{bar}&E\mbox{keV}&\mbox{FHHM}&S&\mbox{backg}&\mbox{NET C/S}& \mbox{ERR}\\ \hline
 0.0&5485.73&28.23&48132&162&96.264&0.46\\ \hline
 0.1&5241.00&39.71&47925&240&95.850&0.46\\ \hline
 0.2&4990.52&52.86&48282&127&96.564&0.46\\ \hline
@@ -76,7 +117,7 @@ p/\mbox{ATM}&E\mbox{keV}&\mbox{FHHM}&S&\mbox{backg}&\mbox{NET C/S}& \mbox{ERR}\\
 0.7&3633.86&136.26&48435&135&96.870&0.46\\ \hline
 0.8&3309.94&156.69&48424&162&96.848&0.46\\ \hline
 0.9&2953.28&185.95&48197&131&96.394&0.46\\ \hline
-1.0&2644.14&211.98&48122&217&96.244&0.46\\ \hline
+0.97&2644.14&211.98&48122&217&96.244&0.46\\ \hline
 \end{array}
 $$
 \caption{Měření energi $\alpha$-částic pro různé hodnoty tlaku}
@@ -88,33 +129,52 @@ Z těchto hodnot následně dopočítáme ionizační ztráty. Hodnoty jsou v ta
 $$
 \begin{array}{|c|c|}
 \hline
-p/\mbox{ATM}& \Delta T \\ \hline
-0.0&0\\ \hline
-0.1&244.7\\ \hline
-0.2&495.2\\ \hline
-0.3&752.7\\ \hline
-0.4&1015.0\\ \hline
-0.5&1287.1\\ \hline
-0.6&1567.8\\ \hline
-0.7&1851.9\\ \hline
-0.8&2175.8\\ \hline
-0.9&2532.4\\ \hline
-1.0&2841.6\\ \hline
+p/\mbox{bar}& \Delta T/\mbox{keV} \\ \hline
+0.0&0.0\pm0.4\\ \hline
+0.1&244.7\pm0.5\\ \hline
+0.2&495.2\pm0.5\\ \hline
+0.3&752.7\pm0.6\\ \hline
+0.4&1015.0\pm0.7\\ \hline
+0.5&1287.1\pm0.8\\ \hline
+0.6&1567.8\pm0.8\\ \hline
+0.7&1851.9\pm0.9\\ \hline
+0.8&2175.8\pm1.0\\ \hline
+0.9&2532.4\pm1.2\\ \hline
+0.97&2841.6\pm1.3\\ \hline
 \end{array}
 $$
 \caption{Ionizační ztráty $\alpha$-částic v závislosti na tlaku}
 \label{iz}
 \end{table}
 
+\begin{figure}
+\begin{center}
+\input{g.tex}o
+\end{center}
+\caption{Graf závislosti ionizačních ztrát na tlaku}
+\label{g}
+\end{figure}
+
+
+
 \subsection{Specifické ztráty}
 Naměřeným energiím jsem nafitoval polynom s předpisem
 \begin{eqnarray}
 T(x)=-36.4*x^3+77*x^2-890*x+5494
 \end{eqnarray}
-Tomuto předpisu odpovídá dle \ref{brag} Braggova křivka
+Tomuto předpisu odpovídá dle \ref{bragg} Braggova křivka
 \begin{eqnarray}
 h(x)=109.2*x^2-154*x+890
 \end{eqnarray}
+Pro názornost je na obrázku \ref{o1}.
+
+\begin{figure}
+\begin{center}
+\input{g1.tex}o
+\end{center}
+\caption{Bragoova křivka pro měřený vzorek}
+\label{o1}
+\end{figure}
 
 \subsection{Pu}
 Provedl jsem měření pro vzorek ze směsi plutonia izotopů 238 a 239. Pro Jenotlivé píky jsem získal hodnoty uvedené  v tabulce \ref{pu}.
@@ -132,14 +192,33 @@ $$
 \label{pu}
 \end{table}
 
-Poměr izotopů 238 ku 239 následně získáme po dosazení do vtahu \ref{}
+Poměr izotopů 238 ku 239 následně získáme po dosazení do vtahu \ref{p}
 \begin{eqnarray}
-P=29.14
+P=29.1 \pm 0.6
 \end{eqnarray}
 
 \section{Diskuze}
+V celém měření se vyskytovali velmi malé chyby. To především velmi dobrému rozlišení spektrometru. 
+Dále se do hodnot v podstatě neprojevovali vnější zdroje, což také přispělo k přesnosti měření. 
+Získané honoty odpovídají předpokládaným teoretickým výsledkům.
 
 \section{Závěr}
+\noindent
+Provedl jsem kalibraci spektrometru. \\
+Určil jsem rozlišovací schopnost spektrometru
+\begin{eqnarray}
+\Gamma=0.3 \mbox{keV}
+\end{eqnarray}
+Změřil jsem ionizační ztrátu $\alpha$-částic na tlaku. Výsledeky je v tabulce \ref{iz} na obrázku \ref{g}. \\
+Stanovil jsem Braggovu křivku, která je na obrázku \ref{o1}. \\
+Stanovil jsem poměr izotopů 238 ku 239 v Pu
+\begin{eqnarray}
+P=29.1\pm 0.6
+\end{eqnarray}
 
+\begin{thebibliography}{5}
+	\bibitem{text} \textbf{Studijní text na praktikum IV} \\http://physics.mff.cuni.cz/vyuka/zfp/txt\_405.pdf (16. 10. 2012)
+    \bibitem{chyba} \emph{J. Englich}: \textbf{Zpracování výsldků fyzikálních měření} \\ LS 1999/2000
+\end{thebibliography}
 
 \end{document}
