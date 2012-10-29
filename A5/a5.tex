@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{czech}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{graphics}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%%\usepackage{nopageno}
+%%\usepackage{txfonts}
+\usepackage[usenames]{color}
+
+\begin{document}
+\section{Úkol}
+\begin{enumerate}
+    \item Proveďte energetickou kalibraci \alpha-spektrometru a určete jeho rozlišení.
+    \item Určete absolutní aktivitu kalibračního radioizotopu $^{241}$Am.
+    \item Změřte závislost ionizační ztráty \alpha-částic ve vzduchu při normálním 
+    tlaku -d$T$/dx= $f(t)$. Srovnejte tuto závislost se závislotí získanou pomocí empirické formule 
+    pro dolet \alpha-častic ve vzduchu za normálních podmínek.
+    \item Určete energie \alpha-částic vzletujících ze vzorku obsahující izotop $^{239}$Pu a příměs 
+    izotopu $^{238}$Pu a porovnejte je s tabelovými hodnotami. Stanovne relativní zastoupení izotopu 
+    $^{238}$Pu ve vzorku s přesností lepší než 10 \%, jsou-li T$_{1/2}$($^{238}$Pu)=81.71 yr a 
+    T$_{1/2}$($^{239}$Pu)=$24.13\cdot10^3$ yr.
+\end{enumerate}
+
+\section{Teoretický úvod}
+
+\section{Měření}
+\subsection{Kalibrace}
+Za pomoci známé energie \alpha-částic radioizotopu Am jsme provedli kalibraci spektrometru. Naměřené hosnoty jsou v prvním řádku tabulky \ref{mer}. 
+Z hodnoty pološířky a vztahu \ref{gamma} jsem stanovil rozlišení spektrometru na
+\begin{eqnarray}
+\Gamma = 66.48 \mbox{keV}.
+\end{eqnarray}
+
+\subsection{Aktivaita vzorku}
+Plocha histogramu odpovídá počtu interakcí na detektoru za dobu měření. Naše měření trvalo 500 sekund. Detektor měl tvar kruhu o průměru 
+\begin{eqnarray}
+d=1.122 \mbox{cm}
+\end{eqnarray}
+a byl ve vzdálenosti
+\begin{eqnarray}
+x=3 \mbox{cm}
+\end{eqnarray}
+od vzorku. Vzorek považujeme za bodový a detektor můžeme aproximovat kulovou úsečí. Pro absolutní aktivitu pak získáme vztah
+\begin{eqnarray}
+A=\frac{N}{t}=4\pi\frac{N_m}{\Omega_dt}=16x\frac{N_m}{d^2t},
+\end{eqnarray}
+což dá po dosazení naměřených hodnot
+\begin{eqnarray}
+A=367045 \mbox{s}^{-1}
+\end{eqnarray}
+
+\subsection{Závislost ionizačních ztrát}
+Pro provedení kalibrace jsme provedli měření pro různé hodnoty tlaku v komoře. Naměřené hodnoty 
+jsou v tabulce \ref{mer}
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p/\mbox{ATM}&E\mbox{keV}&\mbox{FHHM}&S&\mbox{backg}&\mbox{NET C/S}& \mbox{ERR}\\ \hline
+0.0&5485.73&28.23&48132&162&96.264&0.46\\ \hline
+0.1&5241.00&39.71&47925&240&95.850&0.46\\ \hline
+0.2&4990.52&52.86&48282&127&96.564&0.46\\ \hline
+0.3&4733.02&69.41&48231&174&96.462&0.46\\ \hline
+0.4&4470.75&84.84&48002&97&96.001&0.46\\ \hline
+0.5&4198.63&101.11&48135&139&96.270&0.46\\ \hline
+0.6&3917.96&117.67&48437&99&96.874&0.46\\ \hline
+0.7&3633.86&136.26&48435&135&96.870&0.46\\ \hline
+0.8&3309.94&156.69&48424&162&96.848&0.46\\ \hline
+0.9&2953.28&185.95&48197&131&96.394&0.46\\ \hline
+1.0&2644.14&211.98&48122&217&96.244&0.46\\ \hline
+\end{array}
+$$
+\caption{Měření energi $\alpha$-částic pro různé hodnoty tlaku}
+\label{mer}
+\end{table}
+Z těchto hodnot následně dopočítáme ionizační ztráty. Hodnoty jsou v tabulce \ref{iz}.
+
+\begin{table}
+$$
+\begin{array}{|c|c|}
+\hline
+p/\mbox{ATM}& \Delta T \\ \hline
+0.0&0\\ \hline
+0.1&244.7\\ \hline
+0.2&495.2\\ \hline
+0.3&752.7\\ \hline
+0.4&1015.0\\ \hline
+0.5&1287.1\\ \hline
+0.6&1567.8\\ \hline
+0.7&1851.9\\ \hline
+0.8&2175.8\\ \hline
+0.9&2532.4\\ \hline
+1.0&2841.6\\ \hline
+\end{array}
+$$
+\caption{Ionizační ztráty $\alpha$-částic v závislosti na tlaku}
+\label{iz}
+\end{table}
+
+\subsection{Specifické ztráty}
+Naměřeným energiím jsem nafitoval polynom s předpisem
+\begin{eqnarray}
+T(x)=-36.4*x^3+77*x^2-890*x+5494
+\end{eqnarray}
+Tomuto předpisu odpovídá dle \ref{brag} Braggova křivka
+\begin{eqnarray}
+h(x)=109.2*x^2-154*x+890
+\end{eqnarray}
+
+\subsection{Pu}
+Provedl jsem měření pro vzorek ze směsi plutonia izotopů 238 a 239. Pro Jenotlivé píky jsem získal hodnoty uvedené  v tabulce \ref{pu}.
+
+\begin{table}
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+&E\mbox{keV}&\mbox{FHHM}&S&\mbox{backg}&\mbox{NET C/S}& \mbox{ERR}\\ \hline
+^{239}\mbox{Pu}&5142.42&34.26&106570&321&213.140&0.31\\ \hline
+^{238}\mbox{Pu}&5484.98&40.25&917&5&1.834&3.27\\ \hline
+\end{array}
+$$
+\caption{Hodnoty naměřené pro smět Pu izotopů 238 a239}
+\label{pu}
+\end{table}
+
+Poměr izotopů 238 ku 239 následně získáme po dosazení do vtahu \ref{}
+\begin{eqnarray}
+P=29.14
+\end{eqnarray}
+
+\section{Diskuze}
+
+\section{Závěr}
+
+
+\end{document}
