@@ -1,0 +1,46 @@
+
+
+*******************************************************************************
+Mon Nov 19 14:32:49 2012
+
+
+FIT:    data read from "./Kal.dat" u 1:(sqrt(2*pi*3e8/$2))
+        format = x:z
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.92574e+07       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 22.7046
+
+initial set of free parameter values
+
+k               = 1
+a               = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 48.2511
+rel. change during last iteration : -6.74448e-14
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 6.9463
+variance of residuals (reduced chisquare) = WSSR/ndf   : 48.2511
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+k               = 133.477          +/- 0.5775       (0.4327%)
+a               = 2.53359          +/- 0.1324       (5.225%)
+
+
+correlation matrix of the fit parameters:
+
+               k      a      
+k               1.000 
+a               0.974  1.000 
